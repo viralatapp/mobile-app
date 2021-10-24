@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <ScrollView>
         <StackLayout Margin="20,30">
-            <Image Source="tracks" HeightRequest="70"/>
+            <Image Source="logo" HeightRequest="70"/>
             <Label Text="Log In Now"
                    FontFamily="RobotoMedium"
                    HorizontalOptions="CenterAndExpand"
