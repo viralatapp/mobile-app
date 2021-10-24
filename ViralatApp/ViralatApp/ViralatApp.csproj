@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <None Remove="Resources\Fonts\materialdesignicons.ttf" />
+    <None Remove="Resources\Fonts\PaytoneOne-Regular.ttf" />
     <None Remove="Resources\Fonts\Roboto-Black.ttf" />
     <None Remove="Resources\Fonts\Roboto-BlackItalic.ttf" />
     <None Remove="Resources\Fonts\Roboto-Bold.ttf" />
@@ -28,6 +29,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\materialdesignicons.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\PaytoneOne-Regular.ttf" />
     <EmbeddedResource Include="Resources\Fonts\Roboto-Black.ttf" />
     <EmbeddedResource Include="Resources\Fonts\Roboto-BlackItalic.ttf" />
     <EmbeddedResource Include="Resources\Fonts\Roboto-Bold.ttf" />
@@ -45,6 +47,7 @@
   <ItemGroup>
     <PackageReference Include="Prism.Unity.Forms" Version="8.1.97" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
@@ -64,6 +67,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SignUpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TittleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\WelcomePage.xaml">

@@ -14,7 +14,7 @@ namespace ViralatApp
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync(new Uri(NavigationConstants.HomePage, UriKind.Relative));
+            NavigationService.NavigateAsync(new Uri(NavigationConstants.LoginPage, UriKind.Relative));
         }
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
