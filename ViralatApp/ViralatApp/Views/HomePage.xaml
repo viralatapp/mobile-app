@@ -1,12 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:ViralatApp.Controls"
              x:Class="ViralatApp.Views.HomePage"
-             xmlns:fonticons="clr-namespace:ViralatApp.Helpers">
+             BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="jbjyufrfgdg"/>
-            
+        <StackLayout Padding="15">
+            <StackLayout Orientation="Horizontal" Spacing="5">
+                    <Frame BackgroundColor="#F6F4F9" HasShadow='False' CornerRadius="40" HorizontalOptions="Start" Padding="15">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="location"/>
+                            <Label Text="Santo Domingo, Republica Dominicana"/>
+                            <Image Source="cross"/>
+                        </StackLayout>
+                    </Frame>
+                    <Image Source="profile" HeightRequest="40" HorizontalOptions="End" VerticalOptions="Start" TranslationY="5"/>
+            </StackLayout>
+            <Image Source="facebook" HeightRequest="40" HorizontalOptions="End" VerticalOptions="Center" TranslationX="290"/>
+            <Frame CornerRadius="17" Padding="15,0,0,0" BorderColor="#EFEFF0" HasShadow='False' HeightRequest="60">
+                <StackLayout Orientation="Horizontal">
+                    <controls:CustomEntry Keyboard="Text" Text="{Binding Search}" Placeholder="Buscar" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    <Frame BackgroundColor="#D8553F" CornerRadius="20">
+                        <Image Source="search" HorizontalOptions="EndAndExpand"/>
+                    </Frame>
+                </StackLayout>
+                </Frame>
+            <CollectionView  ItemsSource="{Binding Categories}" ItemsLayout="HorizontalList">
+                <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                        <StackLayout Margin="10">
+                            <Frame CornerRadius="17" BorderColor="#EFEFF0" HasShadow='False'>
+                                <Image Source="{Binding Image}"/>
+                            </Frame>
+                            <Label Text="{Binding Name}" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            <CollectionView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

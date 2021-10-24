@@ -50,7 +50,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Converters\" />
     <Folder Include="Renderers\" />
     <Folder Include="Styles\" />
