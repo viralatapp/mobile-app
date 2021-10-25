@@ -13,13 +13,11 @@ namespace ViralatApp.ViewModels
             GoToSignUpPageCommand = new DelegateCommand(async () =>
             {
                 await navigationService.NavigateAsync(NavigationConstants.SignUpPage);
-
             });
 
             GoToHomePageCommand = new DelegateCommand(async () =>
             {
                 await navigationService.NavigateAsync(NavigationConstants.HomePage);
-
             });
         }
     }
