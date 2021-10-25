@@ -27,12 +27,13 @@
             </Frame>
 
             <Frame
-                Margin="0,20"
+                Margin="10,20"
                 Grid.Column="0"
                 Grid.Row="1"
                 CornerRadius="20" >
                 <StackLayout VerticalOptions="FillAndExpand">
                     <Label
+                        FontFamily="RobotoBold"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         Text="Edad"/>
@@ -46,12 +47,13 @@
             </Frame>
 
             <Frame
-                Margin="0,20"
+                Margin="10,20"
                 Grid.Column="1"
                 Grid.Row="1"
                 CornerRadius="20" >
                 <StackLayout VerticalOptions="FillAndExpand">
                     <Label
+                        FontFamily="RobotoBold"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         Text="Peso"/>
@@ -65,12 +67,13 @@
             </Frame>
 
             <Frame
-                Margin="0,20"
+                Margin="10,20"
                 Grid.Column="2"
                 Grid.Row="1"
                 CornerRadius="20" >
                 <StackLayout VerticalOptions="FillAndExpand">
                     <Label
+                        FontFamily="RobotoBold"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         Text="Sexo" />
@@ -85,7 +88,7 @@
             <Label Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0" Margin="10,5">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Nombre: " />
+                        <Span FontSize="Body" FontFamily="RobotoBold" Text="Nombre: " />
                         <Span Text="Naruto"/>
                     </FormattedString>
                 </Label.FormattedText>
@@ -94,30 +97,40 @@
             <Label Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="2" Margin="10,5">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Raza: " />
+                        <Span FontFamily="RobotoBold" FontSize="Body" Text="Raza: " />
                         <Span Text="Viralata"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
 
-            <Label 
-                Grid.ColumnSpan="3" 
-                Grid.Row="3" 
-                Grid.Column="0" 
-                Margin="10,5" 
-                Text="Descripción"
-                />
+            <Image 
+                Grid.Column="0"
+                Grid.Row="3"
+                HeightRequest="20"
+                WidthRequest="20"
+                HorizontalOptions="Start"
+                Margin="10,0"
+                Source="placeholder" />
 
             <Label 
                 Grid.ColumnSpan="3" 
                 Grid.Row="4" 
                 Grid.Column="0" 
                 Margin="10,5" 
+                FontFamily="RobotoBold"
+                Text="Descripción"
+                />
+
+            <Label 
+                Grid.ColumnSpan="3" 
+                Grid.Row="5" 
+                Grid.Column="0" 
+                Margin="10,5" 
                 Text="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas Letraset, las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum."
                 />
 
             <Button 
-                Grid.Row="5"
+                Grid.Row="6"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Text="Adoptar"
@@ -125,28 +138,24 @@
                 FontSize="Body"
                 BackgroundColor="#F9543B"
                 TextColor="White"
-                CornerRadius="5"
+                CornerRadius="15"
                 Margin="0,30,0,15"
                 Padding="18"
                 ImageSource="track"
                 HorizontalOptions="FillAndExpand"
                 ContentLayout="left" />
             
-            <Button 
-                Grid.Row="5"
+            <ImageButton
+                Grid.Row="6"
                 Grid.Column="2"
                 Grid.ColumnSpan="1"
-                Text="Adoptar"
-                FontFamily="RobotoRegular"
-                FontSize="Body"
                 BackgroundColor="#F9543B"
-                TextColor="White"
-                CornerRadius="5"
-                Margin="0,30,0,15"
+                CornerRadius="15"
+                Margin="10,30,10,15"
+                WidthRequest="30"
                 Padding="18"
-                ImageSource="track"
-                HorizontalOptions="FillAndExpand"
-                ContentLayout="left" />
+                Source="phoneCall"
+                HorizontalOptions="FillAndExpand"/>
         </Grid>
     </ScrollView>
     
