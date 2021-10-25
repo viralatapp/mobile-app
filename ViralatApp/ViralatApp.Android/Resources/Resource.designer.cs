@@ -18948,6 +18948,7 @@ namespace ViralatApp.Droid
 			
 			// aapt resource value: 0x7F0700A4
 			public const int ViralatappFull = 2131165348;
+
 			
 			static Drawable()
 			{

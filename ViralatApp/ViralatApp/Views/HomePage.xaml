@@ -7,40 +7,56 @@
     <ContentPage.Content>
         <StackLayout Padding="15">
             <StackLayout Orientation="Horizontal" Spacing="5">
-                    <Frame BackgroundColor="#F6F4F9" HasShadow='False' CornerRadius="40" HorizontalOptions="Start" Padding="15">
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="location"/>
-                            <Label Text="Santo Domingo, Republica Dominicana"/>
-                            <Image Source="cross"/>
-                        </StackLayout>
-                    </Frame>
-                    <Image Source="profile" HeightRequest="40" HorizontalOptions="End" VerticalOptions="Start" TranslationY="5"/>
+                <Frame BackgroundColor="#F6F4F9" HasShadow='False' CornerRadius="40" HorizontalOptions="Start" Padding="15">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="location"/>
+                        <Label Text="Santo Domingo, Republica Dominicana"/>
+                        <Image Source="cross"/>
+                    </StackLayout>
+                </Frame>
+                <Image Source="profile" HeightRequest="40" HorizontalOptions="End" VerticalOptions="Start" TranslationY="5"/>
             </StackLayout>
-            <Image Source="facebook" HeightRequest="40" HorizontalOptions="End" VerticalOptions="Center" TranslationX="290"/>
-            <Frame CornerRadius="17" Padding="15,0,0,0" BorderColor="#EFEFF0" HasShadow='False' HeightRequest="60">
+            <Frame CornerRadius="17" Padding="15,0,0,0" BorderColor="#EFEFF0" HasShadow='False' HeightRequest="60" Margin="0,10">
                 <StackLayout Orientation="Horizontal">
-                    <controls:CustomEntry Keyboard="Text" Text="{Binding Search}" Placeholder="Buscar" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    <controls:CustomEntry Keyboard="Text" Text="{Binding Search}" Placeholder="Buscar" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand"/>
                     <Frame BackgroundColor="#D8553F" CornerRadius="20">
                         <Image Source="search" HorizontalOptions="EndAndExpand"/>
                     </Frame>
                 </StackLayout>
-                </Frame>
-            <CollectionView  ItemsSource="{Binding Categories}" ItemsLayout="HorizontalList">
-                <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                        <StackLayout Margin="10">
-                            <Frame CornerRadius="17" BorderColor="#EFEFF0" HasShadow='False'>
-                                <Image Source="{Binding Image}"/>
-                            </Frame>
-                            <Label Text="{Binding Name}" HorizontalOptions="Center"/>
-                        </StackLayout>
-                    </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            <CollectionView>
+            </Frame>
+            <Label Text="Categorias" FontSize="17" FontFamily="PaytoneOneRegular" TextColor="Black"/>
+            <CollectionView  ItemsSource="{Binding Categories}" HorizontalOptions="Center">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal"
+                           ItemSpacing="15" />
+                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-
+                        <StackLayout>
+                            <Frame CornerRadius="17" BorderColor="#EFEFF0" HasShadow='False' Padding="15">
+                                <Image Source="{Binding Image}" HeightRequest="50"/>
+                            </Frame>
+                            <Label Text="{Binding Name}" HorizontalOptions="Center" FontFamily="RobotoRegular"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label Text="Mascotas" FontSize="17" FontFamily="PaytoneOneRegular" TextColor="Black" Margin="0,-150,0,0"/>
+            <CollectionView  ItemsSource="{Binding Categories}" HorizontalOptions="Center">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout  Orientation="Vertical"
+                           Span="2"
+                           VerticalItemSpacing="20"
+                           HorizontalItemSpacing="30"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame CornerRadius="17" BorderColor="#EFEFF0" HasShadow='False' Padding="15">
+                                <Image Source="{Binding Image}" HeightRequest="50"/>
+                            </Frame>
+                            <Label Text="{Binding Name}" HorizontalOptions="Center" FontFamily="RobotoRegular"/>
+                        </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
