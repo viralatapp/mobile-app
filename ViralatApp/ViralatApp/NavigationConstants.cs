@@ -7,5 +7,6 @@
         public const string SignUpPage = "SignUpPage";
         public const string WelcomePage = "WelcomePage";
         public const string DetailPage = "DetailPage";
+        public const string SponsorPage = "SponsorPage";
     }
 }
