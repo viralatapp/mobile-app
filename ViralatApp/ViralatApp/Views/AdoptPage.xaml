@@ -84,12 +84,62 @@
                             <controls:CustomEntry Text="" Placeholder="Last Name" Style="{StaticResource CustomEntryStyle}"/>
                         </StackLayout>
                     </Frame>
-                    <controls:CustomEntry Grid.Row="8" Grid.Column="0" Text="" Placeholder="Date of Birth" Style="{StaticResource CustomEntryStyle}"/>
-                    <controls:CustomEntry Grid.Row="8" Grid.Column="1" Text="" Placeholder="Gender" Style="{StaticResource CustomEntryStyle}"/>
-                    <controls:CustomEntry Grid.Row="9" Grid.ColumnSpan="2" Text="" Placeholder="Address" Style="{StaticResource CustomEntryStyle}"/>
-                    <controls:CustomEntry Grid.Row="10" Grid.Column="0" Text="" Placeholder="City" Style="{StaticResource CustomEntryStyle}"/>
-                    <controls:CustomEntry Grid.Row="10" Grid.Column="1" Text="" Placeholder="Country" Style="{StaticResource CustomEntryStyle}"/>
-
+                    <Frame Grid.Row="8" Grid.Column="0" Style="{StaticResource CustomEntryFrameStyle}">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS">10</On>
+                                <On Platform="Android">5</On>
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout Orientation="Horizontal" Padding="5,0">
+                            <controls:CustomEntry Text="" Placeholder="Date of Birth" Style="{StaticResource CustomEntryStyle}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="8" Grid.Column="1" Style="{StaticResource CustomEntryFrameStyle}">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS">10</On>
+                                <On Platform="Android">5</On>
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout Orientation="Horizontal" Padding="5,0">
+                            <controls:CustomEntry Text="" Placeholder="Gender" Style="{StaticResource CustomEntryStyle}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="9" Grid.ColumnSpan="2" Style="{StaticResource CustomEntryFrameStyle}">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS">10</On>
+                                <On Platform="Android">5</On>
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout Orientation="Horizontal" Padding="5,0">
+                            <controls:CustomEntry Text="" Placeholder="Address" Style="{StaticResource CustomEntryStyle}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="10" Grid.Column="0" Style="{StaticResource CustomEntryFrameStyle}">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS">10</On>
+                                <On Platform="Android">5</On>
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout Orientation="Horizontal" Padding="5,0">
+                            <controls:CustomEntry Text="" Placeholder="City" Style="{StaticResource CustomEntryStyle}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="10" Grid.Column="1" Style="{StaticResource CustomEntryFrameStyle}">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS">10</On>
+                                <On Platform="Android">5</On>
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout Orientation="Horizontal" Padding="5,0">
+                            <controls:CustomEntry Text="" Placeholder="Country" Style="{StaticResource CustomEntryStyle}"/>
+                        </StackLayout>
+                    </Frame>
+                    
                     <Label Grid.Row="11" Grid.ColumnSpan="2" 
                            Text="Refuge's Required Information (if applicable)" FontSize="Large"/>
                     <Label Grid.Row="12" Grid.ColumnSpan="2" 
