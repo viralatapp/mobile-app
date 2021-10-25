@@ -3,9 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:ViralatApp.Controls"
              x:Class="ViralatApp.Views.HomePage"
+             x:Name="homePage"
              BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout Padding="15">
+            
             <StackLayout Orientation="Horizontal" Spacing="5">
                 <Frame BackgroundColor="#F6F4F9" HasShadow='False' CornerRadius="40" HorizontalOptions="Start" Padding="15">
                     <StackLayout Orientation="Horizontal">
@@ -16,6 +18,7 @@
                 </Frame>
                 <Image Source="profile" HeightRequest="40" HorizontalOptions="End" VerticalOptions="Start" TranslationY="5"/>
             </StackLayout>
+            
             <Frame CornerRadius="17" Padding="15,0,0,0" BorderColor="#EFEFF0" HasShadow='False' HeightRequest="60" Margin="0,10">
                 <StackLayout Orientation="Horizontal">
                     <controls:CustomEntry Keyboard="Text" Text="{Binding Search}" Placeholder="Buscar" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand"/>
@@ -24,7 +27,9 @@
                     </Frame>
                 </StackLayout>
             </Frame>
+            
             <Label Text="Categorias" FontSize="17" FontFamily="PaytoneOneRegular" TextColor="Black"/>
+            
             <CollectionView  ItemsSource="{Binding Categories}" HorizontalOptions="Center">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal"
@@ -38,28 +43,49 @@
                             </Frame>
                             <Label Text="{Binding Name}" HorizontalOptions="Center" FontFamily="RobotoRegular"/>
                         </StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Path=BindingContext.GoToDetailPageCommand, Source={x:Reference homePage}}"/>
+                        </StackLayout.GestureRecognizers>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            
             <Label Text="Mascotas" FontSize="17" FontFamily="PaytoneOneRegular" TextColor="Black" Margin="0,-150,0,0"/>
-            <CollectionView  ItemsSource="{Binding Categories}" HorizontalOptions="Center">
+            <CollectionView  ItemsSource="{Binding Pets}" HorizontalOptions="Center">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout  Orientation="Vertical"
                            Span="2"
-                           VerticalItemSpacing="20"
-                           HorizontalItemSpacing="30"/>
+                           VerticalItemSpacing="10"
+                           HorizontalItemSpacing="10"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Frame CornerRadius="17" BorderColor="#EFEFF0" HasShadow='False' Padding="15">
-                                <Image Source="{Binding Image}" HeightRequest="50"/>
+                            <Frame CornerRadius="17" BorderColor="#EFEFF0" HasShadow='False' Padding="0">
+                                <StackLayout>
+                                    <Image Source="{Binding Image}" HorizontalOptions ="Fill"/>
+                                    <StackLayout Margin="10">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Frame BackgroundColor="#f5dad5" HasShadow='False' CornerRadius="25" Padding="28,5" HorizontalOptions="Start">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Adulto" TextColor="Black" FontFamily="RobotoRegular" HorizontalOptions="Start"/>
+                                                </StackLayout>
+                                            </Frame>
+                                            <Image Source="masculine" HorizontalOptions="EndAndExpand" HeightRequest="30"/>
+                                        </StackLayout>
+                                        <Label Text="{Binding Name}" HorizontalOptions="Start" FontFamily="RobotoMedium" FontSize="18" TextColor="Black"/>
+                                        <Label Text="{Binding Race}" HorizontalOptions="Start" FontFamily="RobotoRegular" FontSize="15" TextColor="Black"/>
+                                    </StackLayout>
+                                </StackLayout>
                             </Frame>
-                            <Label Text="{Binding Name}" HorizontalOptions="Center" FontFamily="RobotoRegular"/>
                         </StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Path=BindingContext.GoToListOfPetsPageCommand, Source={x:Reference homePage}}"/>
+                        </StackLayout.GestureRecognizers>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
