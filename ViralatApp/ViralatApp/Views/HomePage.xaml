@@ -39,13 +39,14 @@
                     <DataTemplate>
                         <StackLayout>
                             <Frame CornerRadius="17" BorderColor="#EFEFF0" HasShadow='False' Padding="15">
-                                <Image Source="{Binding Image}" HeightRequest="50"/>
+                                <Image Source="{Binding Image}" HeightRequest="50">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.GoToDetailPageCommand, Source={x:Reference homePage}}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
                             </Frame>
                             <Label Text="{Binding Name}" HorizontalOptions="Center" FontFamily="RobotoRegular"/>
                         </StackLayout>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Path=BindingContext.GoToDetailPageCommand, Source={x:Reference homePage}}"/>
-                        </StackLayout.GestureRecognizers>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
@@ -71,7 +72,11 @@
                                                     <Label Text="Adulto" TextColor="Black" FontFamily="RobotoRegular" HorizontalOptions="Start"/>
                                                 </StackLayout>
                                             </Frame>
-                                            <Image Source="masculine" HorizontalOptions="EndAndExpand" HeightRequest="30"/>
+                                            <Image Source="masculine" HorizontalOptions="EndAndExpand" HeightRequest="30">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.GoToListOfPetsPageCommand, Source={x:Reference homePage}}"/>
+                                                </Image.GestureRecognizers>
+                                            </Image>
                                         </StackLayout>
                                         <Label Text="{Binding Name}" HorizontalOptions="Start" FontFamily="RobotoMedium" FontSize="18" TextColor="Black"/>
                                         <Label Text="{Binding Race}" HorizontalOptions="Start" FontFamily="RobotoRegular" FontSize="15" TextColor="Black"/>
@@ -79,9 +84,6 @@
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Path=BindingContext.GoToListOfPetsPageCommand, Source={x:Reference homePage}}"/>
-                        </StackLayout.GestureRecognizers>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
