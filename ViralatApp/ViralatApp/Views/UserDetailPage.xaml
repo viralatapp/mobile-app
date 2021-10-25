@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ViralatApp.Views.UserDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ViralatApp.Controls">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid
+                    Padding="10,20,10,10"
+                    BackgroundColor="White"
+                    ColumnDefinitions="*, *, *"
+                    RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+                    <Frame
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="5"
+                        Margin="20,25,20,10"
+                        Padding="3"
+                        HasShadow="False">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS">10</On>
+                                <On Platform="Android">5</On>
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout Padding="5,0" Orientation="Horizontal">
+                            <Image
+                                Margin="60,0,30,0"
+                                Aspect="AspectFit"
+                                HorizontalOptions="Center"
+                                Source="people"
+                                VerticalOptions="Center" />
+
+                        </StackLayout>
+                    </Frame>
+                    <Label
+                        Grid.Row="1"
+                        Grid.ColumnSpan="5"
+                        FontAttributes="Bold"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Juan Pérez González"
+                        TextColor="Black" />
+                    <Label
+                        Grid.Row="2"
+                        Grid.ColumnSpan="5"
+                        Margin="10,5"
+                        Text="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original." />
+                    <Label
+                        Grid.Row="3"
+                        Grid.ColumnSpan="3"
+                        Margin="10,5"
+                        Text="- Ha adoptado a una perrita de 5 meses llamada Diana el día 25/09/2021.&#10;&#10; - Ha apadrinado a Spy, un cachorro de 3 meses.&#10;&#10; - Ha adoptado a un gato con  2 semanas de nacido." />
+                    
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
