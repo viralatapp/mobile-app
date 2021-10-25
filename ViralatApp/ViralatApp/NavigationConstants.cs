@@ -8,5 +8,6 @@
         public const string WelcomePage = "WelcomePage";
         public const string DetailPage = "DetailPage";
         public const string AdoptPage = "AdoptPage";
+        public const string SponsorPage = "SponsorPage";
     }
 }
