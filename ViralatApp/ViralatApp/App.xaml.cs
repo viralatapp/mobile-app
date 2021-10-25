@@ -25,6 +25,8 @@ namespace ViralatApp
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<DetailPage, DetailPageViewModel>();
             containerRegistry.RegisterForNavigation<SponsorPage, SponsorPageViewModel>();
+            containerRegistry.RegisterForNavigation<UserDetailPage, UserDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<RefugeDetailPage, RefugeDetailPageViewModel>();
         }
     }
 }

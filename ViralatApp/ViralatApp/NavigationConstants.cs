@@ -9,5 +9,7 @@
         public const string DetailPage = "DetailPage";
         public const string AdoptPage = "AdoptPage";
         public const string SponsorPage = "SponsorPage";
+        public const string UserDetailPage = "UserDetailPage";
+        public const string RefugeDetailPage = "RefugeDetailPage";
     }
 }
