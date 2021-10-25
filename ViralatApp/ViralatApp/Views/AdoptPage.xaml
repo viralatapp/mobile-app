@@ -1,12 +1,153 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:ViralatApp.Controls"
              x:Class="ViralatApp.Views.AdoptPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Roboto"/>
+            </Style>
+            <Style TargetType="Label" x:Key="DescriptionLabelStyle">
+                <Setter Property="Padding" Value="10,10,0,0"/>
+            </Style>
+            <Style x:Key="CustomEntryStyle" TargetType="controls:CustomEntry">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="RobotoRegular"/>
+                <Setter Property="FontAttributes" Value="None"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Margin" Value="0,0,20,0"/>
+                <Setter Property="Keyboard" Value="Text"/>
+            </Style>
+            <Style x:Key="CustomEntryFrameStyle" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="BorderColor" Value="#dfe4e9"/>
+                <Setter Property="Padding" Value="3"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Adopt a Pet Sample Text!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Adoption Form"
+                   FontFamily="RobotoMedium"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontSize="Title"/>
+            <ScrollView>
+                <Grid ColumnDefinitions="*, *" RowDefinitions="
+                      Auto, Auto, Auto, Auto, Auto, 
+                      Auto, Auto, Auto, Auto, Auto, 
+                      Auto, Auto, Auto, Auto, Auto, 
+                      Auto, Auto, Auto, Auto, Auto"
+                      Padding="10,20,10,10" BackgroundColor="White">
+                    <Label Grid.Row="0" Grid.ColumnSpan="2" 
+                        Text="Pet Information" FontSize="Large"/>
+                    <Label Grid.Row="1" Grid.ColumnSpan="2" 
+                        Text="Name: {Diana}" Style="{StaticResource DescriptionLabelStyle} "/>
+                    <Label Grid.Row="2" Grid.ColumnSpan="2" 
+                        Text="Breed: {Mixed}" Style="{StaticResource DescriptionLabelStyle} "/>
+                    <Label Grid.Row="3" Grid.ColumnSpan="2" 
+                        Text="Age: {3 months}" Style="{StaticResource DescriptionLabelStyle}"/>
+                    <Label Grid.Row="4" Grid.Column="0" 
+                        Text="Weight: {35 lbs}" Style="{StaticResource DescriptionLabelStyle}"/>
+                    <Label Grid.Row="4" Grid.Column="1"
+                        Text="Sex: {Female}" Style="{StaticResource DescriptionLabelStyle}"/>
+
+                    <Label Grid.Row="5" Grid.ColumnSpan="2" 
+                           Text="Applicant Information" FontSize="Large"/>
+                    <Label Grid.Row="6" Grid.ColumnSpan="2"
+                           Text="Tap here if the current user IS the applicant" Padding="40,5,0,0"/>
+                    <CheckBox Grid.Row="6"/>
+                    
+                    <!-- REPLACE THIS WITH WHOLE CUSTOM ENTRY -->
+                    <Frame Grid.Row="7" Grid.Column="0" Style="{StaticResource CustomEntryFrameStyle}">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS">10</On>
+                                <On Platform="Android">5</On>
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout Orientation="Horizontal" Padding="5,0">
+                            <controls:CustomEntry Text="" Placeholder="First Name" Style="{StaticResource CustomEntryStyle}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="7" Grid.Column="1" Style="{StaticResource CustomEntryFrameStyle}">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS">10</On>
+                                <On Platform="Android">5</On>
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout Orientation="Horizontal" Padding="5,0">
+                            <controls:CustomEntry Text="" Placeholder="Last Name" Style="{StaticResource CustomEntryStyle}"/>
+                        </StackLayout>
+                    </Frame>
+                    <controls:CustomEntry Grid.Row="8" Grid.Column="0" Text="" Placeholder="Date of Birth" Style="{StaticResource CustomEntryStyle}"/>
+                    <controls:CustomEntry Grid.Row="8" Grid.Column="1" Text="" Placeholder="Gender" Style="{StaticResource CustomEntryStyle}"/>
+                    <controls:CustomEntry Grid.Row="9" Grid.ColumnSpan="2" Text="" Placeholder="Address" Style="{StaticResource CustomEntryStyle}"/>
+                    <controls:CustomEntry Grid.Row="10" Grid.Column="0" Text="" Placeholder="City" Style="{StaticResource CustomEntryStyle}"/>
+                    <controls:CustomEntry Grid.Row="10" Grid.Column="1" Text="" Placeholder="Country" Style="{StaticResource CustomEntryStyle}"/>
+
+                    <Label Grid.Row="11" Grid.ColumnSpan="2" 
+                           Text="Refuge's Required Information (if applicable)" FontSize="Large"/>
+                    <Label Grid.Row="12" Grid.ColumnSpan="2" 
+                        Text="Name of the Refuge" Style="{StaticResource DescriptionLabelStyle}"/>
+                    <Label Grid.Row="13" Grid.ColumnSpan="2" 
+                        Text="Location of the Refuge" Style="{StaticResource DescriptionLabelStyle}"/>
+                    <Label Grid.Row="14" Grid.ColumnSpan="2" 
+                        Text="Question #1" Style="{StaticResource DescriptionLabelStyle}"/>
+                    <Frame Grid.Row="15" Grid.ColumnSpan="2"  Style="{StaticResource CustomEntryFrameStyle}">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS">10</On>
+                                <On Platform="Android">5</On>
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout Orientation="Horizontal" Padding="5,0">
+                            <controls:CustomEntry Text="" Placeholder="Answer #1" Style="{StaticResource CustomEntryStyle}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Label Grid.Row="16" Grid.ColumnSpan="2" 
+                        Text="Question #2" Style="{StaticResource DescriptionLabelStyle}"/>
+                    <Frame Grid.Row="17" Grid.ColumnSpan="2"  Style="{StaticResource CustomEntryFrameStyle}">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS">10</On>
+                                <On Platform="Android">5</On>
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout Orientation="Horizontal" Padding="5,0">
+                            <controls:CustomEntry Text="" Placeholder="Answer #2" Style="{StaticResource CustomEntryStyle}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Label Grid.Row="18" Grid.ColumnSpan="2" 
+                        Text="Additional Information" FontSize="Large"/>
+                    <Frame Grid.Row="19" Grid.ColumnSpan="2"  Style="{StaticResource CustomEntryFrameStyle}">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS">10</On>
+                                <On Platform="Android">5</On>
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout Orientation="Horizontal" Padding="5,0">
+                            <controls:CustomEntry Text="" Placeholder="Describe where would this pet live:" Style="{StaticResource CustomEntryStyle}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="20" Grid.ColumnSpan="2"  Style="{StaticResource CustomEntryFrameStyle}">
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="iOS">10</On>
+                                <On Platform="Android">5</On>
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+                        <StackLayout Orientation="Horizontal" Padding="5,0">
+                            <controls:CustomEntry Text="" Placeholder="Why do you want to adopt this pet?" Style="{StaticResource CustomEntryStyle}"/>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
