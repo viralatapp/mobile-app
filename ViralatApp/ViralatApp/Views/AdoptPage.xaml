@@ -40,7 +40,7 @@
                       Auto, Auto, Auto, Auto, Auto, 
                       Auto, Auto, Auto, Auto, Auto, 
                       Auto, Auto, Auto, Auto, Auto, 
-                      Auto, Auto, Auto, Auto, Auto"
+                      Auto, Auto, Auto, Auto, Auto, Auto"
                       Padding="10,20,10,10" BackgroundColor="White">
                     <Label Grid.Row="0" Grid.ColumnSpan="2" 
                         Text="Pet Information" FontSize="Large"/>
@@ -196,6 +196,22 @@
                             <controls:CustomEntry Text="" Placeholder="Why do you want to adopt this pet?" Style="{StaticResource CustomEntryStyle}"/>
                         </StackLayout>
                     </Frame>
+                    <Button 
+                        Grid.Row="21"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Text="Submit"
+                        FontFamily="RobotoRegular"
+                        FontSize="Body"
+                        BackgroundColor="#F9543B"
+                        TextColor="White"
+                        CornerRadius="15"
+                        Margin="0,30,0,15"
+                        Padding="18"
+                        ImageSource="track"
+                        HorizontalOptions="FillAndExpand"
+                        ContentLayout="left" 
+                        Command="{Binding SubmitPageCommand}"/>
                 </Grid>
             </ScrollView>
         </StackLayout>

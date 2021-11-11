@@ -28,7 +28,7 @@
                     CornerRadius="5"
                     Margin="0,30,0,15"
                     Padding="18"
-                        VerticalOptions="EndAndExpand"/>
+                        VerticalOptions="EndAndExpand" Command="{Binding GoToSignupPageCommand}"/>
                 <Label LineBreakMode="WordWrap" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
                     <Label.FormattedText>
                         <FormattedString>
