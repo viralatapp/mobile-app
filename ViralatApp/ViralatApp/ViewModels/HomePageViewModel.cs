@@ -10,6 +10,7 @@ namespace ViralatApp.ViewModels
     {
         public ObservableCollection<Category> Categories { get; set; } = new ObservableCollection<Category>();
         public ObservableCollection<Pet> Pets { get; set; } = new ObservableCollection<Pet>();
+        public DelegateCommand GoToUserDetailsPageCommand { get; set; }
         public DelegateCommand GoToDetailPageCommand { get; set; }
         public DelegateCommand GoToListOfPetsPageCommand { get; set; }
 
@@ -24,6 +25,11 @@ namespace ViralatApp.ViewModels
             Pets.Add(new Pet { Name = "Kiko", Image = "secondPet", Race = "Mestizo", IsAdult = false, Sexo = Sexo.Masculino });
             Pets.Add(new Pet { Name = "Coco", Image = "thridPet", Race = "Mestizo", IsAdult = true, Sexo = Sexo.Masculino });
             Pets.Add(new Pet { Name = "Shira", Image = "fourthPet", Race = "Mestizo", IsAdult = false, Sexo = Sexo.Femenino });
+
+            GoToUserDetailsPageCommand = new DelegateCommand(async () =>
+            {
+                await navigationService.NavigateAsync(NavigationConstants.UserDetailPage);
+            });
 
             GoToDetailPageCommand = new DelegateCommand(async () =>
             {

@@ -157,6 +157,24 @@
                 Padding="18"
                 Source="phoneCall"
                 HorizontalOptions="FillAndExpand"/>
+
+            <Button 
+                Grid.Row="7"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Text="Donar"
+                FontFamily="RobotoRegular"
+                FontSize="Body"
+                BackgroundColor="#F9543B"
+                TextColor="White"
+                CornerRadius="15"
+                Margin="0,30,0,15"
+                HeightRequest="60"
+                Padding="18"
+                ImageSource="heart"
+                HorizontalOptions="FillAndExpand"
+                ContentLayout="left" 
+                Command="{Binding GoToSponsorPageCommand}"/>
         </Grid>
     </ScrollView>
     
