@@ -24,7 +24,7 @@
                     </OnPlatform>
                 </Frame.CornerRadius>
                 <StackLayout Orientation="Horizontal" Padding="5,0">
-                    <controls:CustomEntry Keyboard="Text" Text="{Binding Username}" Placeholder="Email" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    <controls:CustomEntry Keyboard="Text" Text="{Binding Email}" Placeholder="Email" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                 </StackLayout>
             </Frame>
                 <Frame BackgroundColor="Transparent" HasShadow="False" BorderColor="#dfe4e9" Padding="3" HorizontalOptions="FillAndExpand">
@@ -50,7 +50,7 @@
                     CornerRadius="5"
                     Margin="0,30,0,15"
                     Padding="18"
-                    Command="{Binding GoToHomePageCommand}"/>
+                    Command="{Binding LoginCommand}"/>
                 <Label LineBreakMode="WordWrap" HorizontalOptions="CenterAndExpand">
                     <Label.FormattedText>
                         <FormattedString>

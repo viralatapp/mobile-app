@@ -2,7 +2,8 @@
 <prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ViralatApp.App"
-             xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms">
+             xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+             xmlns:styles="clr-namespace:ViralatApp.Styles;assembly=ViralatApp">
     <prism:PrismApplication.Resources>
 
     </prism:PrismApplication.Resources>

@@ -41,7 +41,8 @@
                             <Frame CornerRadius="17" BorderColor="#EFEFF0" HasShadow='False' Padding="15">
                                 <Image Source="{Binding Image}" HeightRequest="50">
                                     <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.GoToDetailPageCommand, Source={x:Reference homePage}}"/>
+                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.LoadPetCommand, Source={x:Reference homePage}}"
+                                                              CommandParameter="{Binding .}"/>
                                     </Image.GestureRecognizers>
                                 </Image>
                             </Frame>
@@ -81,7 +82,11 @@
                                         <Label Text="{Binding Name}" HorizontalOptions="Start" FontFamily="RobotoMedium" FontSize="18" TextColor="Black"/>
                                         <Label Text="{Binding Race}" HorizontalOptions="Start" FontFamily="RobotoRegular" FontSize="15" TextColor="Black"/>
                                     </StackLayout>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.GoToDetailPageCommand, Source={x:Reference homePage}}"/>
+                                    </StackLayout.GestureRecognizers>
                                 </StackLayout>
+
                             </Frame>
                         </StackLayout>
                     </DataTemplate>

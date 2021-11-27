@@ -3,7 +3,8 @@
     x:Class="ViralatApp.Views.RefugeDetailPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:ViralatApp.Controls">
+    xmlns:controls="clr-namespace:ViralatApp.Views;assembly=ViralatApp"
+    xmlns:controls1="clr-namespace:ViralatApp.Controls;assembly=ViralatApp">
     <ScrollView>
         <StackLayout>
             <Grid
@@ -84,7 +85,7 @@
                         </OnPlatform>
                     </Frame.CornerRadius>
                     <StackLayout Padding="5,0" Orientation="Horizontal">
-                        <controls:CustomEntry
+                        <controls1:CustomEntry
                             Margin="10,0,20,0"
                             FontAttributes="None"
                             FontFamily="RobotoRegular"
@@ -120,7 +121,7 @@
                         </OnPlatform>
                     </Frame.CornerRadius>
                     <StackLayout Padding="5,0" Orientation="Horizontal">
-                        <controls:CustomEntry
+                        <controls1:CustomEntry
                             Margin="20,0,20,0"
                             FontAttributes="None"
                             FontFamily="RobotoRegular"

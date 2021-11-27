@@ -57,6 +57,7 @@
                 <Button Text="Sign Up"
                     FontFamily="RobotoRegular"
                     FontSize="Body"
+                    Command="{Binding  RegisterCommand}"
                     BackgroundColor="#F9543B"
                     TextColor="White"
                     CornerRadius="5"
