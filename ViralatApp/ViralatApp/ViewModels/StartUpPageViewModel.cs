@@ -40,7 +40,7 @@ namespace ViralatApp.ViewModels
                         Password = Settings.Password
                         
                     });
-                    await    navigationService.NavigateAsync(NavigationConstants.HomePage);
+                    await    navigationService.NavigateAsync(NavigationConstants.MenuPage);
                 }
             }
         }

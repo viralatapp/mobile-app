@@ -4,9 +4,9 @@ using Xamarin.Forms.Xaml;
 namespace ViralatApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class MenuPage : BasePage
     {
-        public HomePage()
+        public MenuPage()
         {
             InitializeComponent();
         }

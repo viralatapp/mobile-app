@@ -72,7 +72,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Views\MasterPages\HomePage.xaml.cs">
+    <Compile Update="Views\MasterPages\MenuPage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -84,7 +84,7 @@
       <DependentUpon>AdoptPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\MasterPages\DetailPage.xaml.cs">
+    <Compile Update="Views\MasterPages\PetDetailPage.xaml.cs">
       <DependentUpon>DetailPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

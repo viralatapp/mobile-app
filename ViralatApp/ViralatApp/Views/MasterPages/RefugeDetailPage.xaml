@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<controls:BasePage
     x:Class="ViralatApp.Views.RefugeDetailPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:ViralatApp.Views;assembly=ViralatApp"
     xmlns:controls1="clr-namespace:ViralatApp.Controls;assembly=ViralatApp">
     <ScrollView>
-        <StackLayout>
-            <Grid
+        <Grid
                 Padding="10,20,10,10"
                 BackgroundColor="White"
                 ColumnDefinitions="*, *, *"
@@ -132,6 +131,6 @@
                     </StackLayout>
                 </Frame>
             </Grid>
-        </StackLayout>
+            
     </ScrollView>
-</ContentPage>
+</controls:BasePage>

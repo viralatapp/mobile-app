@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<views:BasePage  xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:viewModels="clr-namespace:ViralatApp.ViewModels;assembly=ViralatApp"
+                 xmlns:models="clr-namespace:ViralatApp.Models;assembly=ViralatApp"
+                 xmlns:controls="clr-namespace:ViralatApp.Controls;assembly=ViralatApp"
+                 xmlns:extesion="clr-namespace:ViralatApp.Extesion;assembly=ViralatApp"
+                 xmlns:views="clr-namespace:ViralatApp.Views;assembly=ViralatApp"
+                 xmlns:IconFont="clr-namespace:ViralatApp.Resources.Fonts;assembly=ViralatApp"
+                 x:Class="ViralatApp.Views.MasterPages.SearchPage">
+    <ContentPage.Content>
+ <Grid RowDefinitions="Auto,*"
+          Padding="15"
+          ColumnDefinitions="Auto,*,Auto">
+     <ImageButton BackgroundColor="{StaticResource PrimaryColor}"
+                  Padding="10,5,5,5"
+                  WidthRequest="40"
+                  CornerRadius="20"
+                  VerticalOptions="StartAndExpand"
+                  Command="{Binding GoBackCommand}"
+                  HorizontalOptions="StartAndExpand">
+         <ImageButton.Source> 
+                                             
+             <FontImageSource FontFamily="{StaticResource MaterialIcon}"
+                              Glyph=" {x:Static IconFont:IconFont.Arrow_back_ios}"
+                              Color="{DynamicResource SecondColor}"
+             />
+         </ImageButton.Source>
+     </ImageButton> 
+     <Frame CornerRadius="15" BorderColor="{DynamicResource PrimaryLightColor}" 
+            HasShadow='False' Padding="10,0"
+            Grid.Row="0"
+            Grid.Column="1">
+        <controls:CustomEntry Keyboard="Text" 
+                              Text="{Binding Search}"
+                              Placeholder="{extesion:Translate Search}" 
+                          
+                              FontAttributes="None" HorizontalOptions="FillAndExpand"/>
+    </Frame>
+    <ImageButton BackgroundColor="{DynamicResource SecondColor}"
+                 Grid.Column="2"
+                 WidthRequest="50"
+                 HeightRequest="40"
+                 VerticalOptions="CenterAndExpand"
+                 Padding="11"
+                 Source="search" 
+                 HorizontalOptions="EndAndExpand"
+                 CornerRadius="10"/>
+    <CollectionView  Grid.Row="1"
+                     Margin="0,20,0,0"
+                     Grid.ColumnSpan="2"
+                     ItemsSource="{Binding Pets}" HorizontalOptions="Center">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout  Orientation="Vertical"
+                           Span="2"
+                           VerticalItemSpacing="10"
+                           HorizontalItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Pet">
+                        <StackLayout>
+                            <Frame CornerRadius="17" 
+                                   BorderColor="{DynamicResource PrimaryLightColor}"
+                                   HasShadow='False' 
+                                   Padding="0">
+                                <Grid RowDefinitions="*,Auto">
+                                    <Image Source="{Binding Image}"
+                                           HorizontalOptions ="Fill"
+                                           Grid.Row="0"/>
+                                    <ImageButton BackgroundColor="{DynamicResource SecondColor}"
+                                                 Grid.Row="0"
+                                                 WidthRequest="35"
+                                                 HeightRequest="35"
+                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:HomeViewModel}},Path=MarkFavoriteCommand}"
+                                                 CommandParameter="{Binding .}"
+                                                 Margin="10"
+                                                 Padding="5"
+                                                 HorizontalOptions="EndAndExpand"
+                                                 VerticalOptions="StartAndExpand"
+                                                 CornerRadius="17">
+                                        <ImageButton.Source>
+                                            <FontImageSource FontFamily="{StaticResource MaterialIcon}"
+                                                             Glyph="{Binding IsFavorite,Converter={StaticResource BoolFavoriteConverter}}"
+                                                             Color="White"
+                                            />
+                                        </ImageButton.Source>
+                                    </ImageButton>
+                                    <StackLayout Margin="10"
+                                                 Grid.Row="1">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Frame BackgroundColor="{DynamicResource SelectedColor}" HasShadow='False' CornerRadius="25" Padding="28,5" HorizontalOptions="Start">
+                                                    <Label Text="{Binding Age,Converter={StaticResource AgeToStringConverter}}" 
+                                                           Style="{StaticResource LabelMedium}"
+                                                           HorizontalOptions="Start"/>
+      
+                                            </Frame>
+                                        </StackLayout>
+                                        <Label Text="{Binding Name}" 
+                                               HorizontalOptions="Start"
+                                               Style="{StaticResource LabelRegular}"/>
+                                        <Label Text="{Binding Breed}"
+                                               HorizontalOptions="Start" 
+                                               Style="{StaticResource LabelMedium}"/>
+                                    </StackLayout>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer     Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:SearchPageViewModel}},Path=GoToDetailPageCommand}"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+</Grid>
+    </ContentPage.Content>
+</views:BasePage>

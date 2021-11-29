@@ -5,6 +5,10 @@
              xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
              xmlns:styles="clr-namespace:ViralatApp.Styles;assembly=ViralatApp">
     <prism:PrismApplication.Resources>
-
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <styles:GlobalStyle/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </prism:PrismApplication.Resources>
 </prism:PrismApplication>

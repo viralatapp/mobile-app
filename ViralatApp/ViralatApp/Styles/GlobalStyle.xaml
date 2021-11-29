@@ -2,6 +2,63 @@
 
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ViralatApp.Controls;assembly=ViralatApp"
              x:Class="ViralatApp.Styles.GlobalStyle">
-    
+    <!---  Color   -->
+    <Color x:Key="PrimaryColor">#F6F4F9</Color>
+    <Color x:Key="PrimaryLightColor">#EFEFF0</Color>
+    <Color x:Key="SecondColor">#D8553F</Color>
+    <Color x:Key="SelectedColor">#f5dad5</Color>
+    <Color x:Key="UnSelectedColor">Gray</Color>
+    <Color x:Key="LetterColor" >Black</Color>
+    <Color x:Key="LetterLightColor" >Gray</Color>
+    <x:String x:Key="LetterRegular">RobotoRegular</x:String>
+    <x:String x:Key="LetterMedium">RobotoMedium</x:String>
+    <x:String x:Key="MaterialIcon">materialdesignicons</x:String>
+    <Style x:Key="LabelRegular"
+           TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource LetterRegular}"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="TextColor" Value="Black"></Setter>
+    </Style>
+    <Style x:Key="LabelMedium"
+           TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource LetterMedium}"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="TextColor" Value="{DynamicResource LetterLightColor}"></Setter>
+        
+    </Style>
+    <Style TargetType="ContentView">
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}"></Setter>
+    </Style>
+    <Style TargetType="Button" x:Key="PrimaryStyleButton">
+        <Setter Property="BackgroundColor" Value="{DynamicResource SecondColor}"/>
+        <Setter Property="CornerRadius" Value="16"/>
+        <Setter Property="Padding" Value="14"/>
+        <Setter Property="FontSize" Value="Body"/>
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}"/>
+        <Setter Property="FontFamily" Value="{StaticResource LetterRegular}"/>
+    </Style>
+    <Style x:Key="CustomEntryStyle" TargetType="controls:CustomEntry">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontFamily" Value="RobotoRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="Margin" Value="0,0,20,0" />
+        <Setter Property="Keyboard" Value="Text" />
+    </Style>
+    <Style x:Key="CustomEntryFrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="BorderColor" Value="{StaticResource PrimaryLightColor}" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="CornerRadius" Value="{OnPlatform Android=5,iOS=10}" />
+    </Style>
+    <Style TargetType="Label" x:Key="DescriptionLabelStyle">
+        <Setter Property="FontFamily" Value="{StaticResource LetterMedium}"/>
+        <Setter Property="FontSize" Value="Body"/>
+        <Setter Property="TextColor" Value="{DynamicResource LetterLightColor}"></Setter>
+        <Setter Property="Padding" Value="10,10,0,0" />
+    </Style>
 </ResourceDictionary>

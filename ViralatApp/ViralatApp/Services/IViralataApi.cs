@@ -48,7 +48,7 @@ namespace ViralatApp.Services
         #region  Application
 
         [Post("/applications")]
-        Task<HttpResponseMessage> CreateApplication([Body] Questionnaire questionnaire,[Header("Authorization")] string token);
+        Task<HttpResponseMessage> CreateApplication([Body] ApplicationAdopt questionnaire,[Header("Authorization")] string token);
 
         #endregion
     }

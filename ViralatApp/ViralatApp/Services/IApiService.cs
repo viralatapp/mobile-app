@@ -29,6 +29,7 @@ namespace ViralatApp.Services
         #region  Pet
 
         Task<List<Pet>> GetPets();
+        Task<List<Category>> GetCategories();
 
         Task<Pet> GetPetById(string id);
         #endregion
@@ -39,12 +40,12 @@ namespace ViralatApp.Services
         Task<List<Adoption>> GetAdoptions();
         Task<Adoption> GetAdoptionsId(string id);
 
-        Task<HttpResponseMessage> CreateAdoptions(RequestAdoption requestAdoption);
+        Task<Adoption> CreateAdoptions(RequestAdoption requestAdoption);
         #endregion
 
         #region  Application
 
-        Task<HttpResponseMessage> CreateApplication( Questionnaire questionnaire);
+        Task<HttpResponseMessage> CreateApplication( ApplicationAdopt applicationAdopt);
 
         #endregion
     }

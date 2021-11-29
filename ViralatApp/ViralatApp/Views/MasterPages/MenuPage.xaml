@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:ViralatApp.Controls"
+             xmlns:viewModels="clr-namespace:ViralatApp.ViewModels;assembly=ViralatApp"
+             xmlns:views="clr-namespace:ViralatApp.Views;assembly=ViralatApp"
+             xmlns:models="clr-namespace:ViralatApp.Models;assembly=ViralatApp"
+             xmlns:extesion="clr-namespace:ViralatApp.Extesion;assembly=ViralatApp"
+             xmlns:views1="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:menuView="clr-namespace:ViralatApp.Views.MenuView;assembly=ViralatApp"
+             xmlns:IconFont="clr-namespace:ViralatApp.Resources.Fonts;assembly=ViralatApp"
+             x:Class="ViralatApp.Views.MenuPage"
+             x:Name="MenuTab"
+
+             >
+    <views:BasePage.Resources>
+        <views1:BoolToObjectConverter TrueObject="{StaticResource SecondColor}"
+                                      FalseObject="{StaticResource PrimaryColor}"
+                                      x:Key="BoolToObjectConverter"/>
+        <ControlTemplate x:Key="TabItemControl">
+            <Frame Padding="0"
+                   BackgroundColor="{TemplateBinding IsSelected, Converter={StaticResource BoolToObjectConverter},Path=IsSelected}"
+                   CornerRadius="20"
+                   HorizontalOptions="CenterAndExpand"
+                   HasShadow="False"
+                   Margin="5">
+            <Grid ColumnDefinitions="*,Auto"
+                  Padding="5,0,10,0"
+                  ColumnSpacing="0">
+             
+                <Image Grid.Column="0"
+                         HeightRequest="20"
+                         WidthRequest="20"
+                         Margin="10,5,10,5"
+                        Source="{TemplateBinding CurrentIcon}"/>
+                <Label Text="{TemplateBinding Text}"
+                       Grid.Column="1"
+                       Style="{StaticResource LabelRegular}"
+                       FontSize="Small"
+                       Margin="5,5,5,5"
+                       TextColor="{TemplateBinding CurrentTextColor}"
+                       IsVisible="{TemplateBinding IsSelected}"
+                       VerticalTextAlignment="Center"
+                />
+            </Grid>
+                </Frame>
+        </ControlTemplate>
+        <Style TargetType="views1:TabViewItem" x:Key="MenuTabItemStyle">
+            <Setter Property="TextColorSelected" Value="{StaticResource PrimaryColor}"/>
+            <Setter Property="TextColor" Value="Gray"/>
+        </Style>
+    </views:BasePage.Resources>
+    <views1:TabView TabStripBackgroundColor="Transparent"
+                    TabStripPlacement="Bottom"
+                    Padding="0,0,0,10"
+                    >
+         <views1:TabViewItem Text="{extesion:Translate Home}"
+                            
+                             Style="{StaticResource MenuTabItemStyle}"
+                             ControlTemplate="{StaticResource TabItemControl}">
+             <views1:TabViewItem.Icon>
+                 <FontImageSource FontFamily="{StaticResource MaterialIcon}"
+                                  Glyph="{x:Static IconFont:IconFont.Home}"
+                                  Color="{StaticResource UnSelectedColor}"
+                                  />
+             </views1:TabViewItem.Icon>
+             <views1:TabViewItem.IconSelected>
+                 <FontImageSource FontFamily="{StaticResource MaterialIcon}"
+                                  Glyph="{x:Static IconFont:IconFont.Home}"
+                 />
+             </views1:TabViewItem.IconSelected>
+             <menuView:HomeView  BindingContext="{Binding  Source={x:Reference MenuTab}, Path=BindingContext.GoHomeViewModel,Mode=TwoWay}"/>
+             
+         </views1:TabViewItem>
+        <views1:TabViewItem Text="{extesion:Translate Messages}"
+                            Style="{StaticResource MenuTabItemStyle}"
+                            ControlTemplate="{StaticResource TabItemControl}">
+            <views1:TabViewItem.Icon>
+                <FontImageSource FontFamily="{StaticResource MaterialIcon}"
+                                 Glyph="{x:Static IconFont:IconFont.Message}"
+                                 Color="{StaticResource UnSelectedColor}"
+                />
+            </views1:TabViewItem.Icon>
+            <views1:TabViewItem.IconSelected>
+                <FontImageSource FontFamily="{StaticResource MaterialIcon}"
+                                 Glyph="{x:Static IconFont:IconFont.Message}"
+                />
+            </views1:TabViewItem.IconSelected>
+            <menuView:MessageView />
+        </views1:TabViewItem>
+        <views1:TabViewItem Text="{extesion:Translate Favorites}"
+                            Style="{StaticResource MenuTabItemStyle}"
+                            ControlTemplate="{StaticResource TabItemControl}">
+            <views1:TabViewItem.Icon>
+                <FontImageSource FontFamily="{StaticResource MaterialIcon}"
+                                 Glyph="{x:Static IconFont:IconFont.Favorite}"
+                                 Color="{StaticResource UnSelectedColor}"
+                />
+            </views1:TabViewItem.Icon>
+            <views1:TabViewItem.IconSelected>
+                <FontImageSource FontFamily="{StaticResource MaterialIcon}"
+                                 Glyph="{x:Static IconFont:IconFont.Favorite}"
+                />
+            </views1:TabViewItem.IconSelected>
+            <menuView:FavoritesView BindingContext="{Binding  Source={x:Reference MenuTab}, Path=BindingContext.GoHomeViewModel}"/>
+        </views1:TabViewItem>
+    </views1:TabView>
+</views:BasePage>

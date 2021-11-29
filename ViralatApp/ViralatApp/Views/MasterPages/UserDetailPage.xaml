@@ -1,23 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<views:BasePage
     x:Class="ViralatApp.Views.UserDetailPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:ViralatApp.Controls">
-    <ContentPage.Content>
-        <ScrollView>
+    xmlns:controls="clr-namespace:ViralatApp.Controls"
+    x:DataType="viewModels:UserDetailPageViewModel"
+    xmlns:views="clr-namespace:ViralatApp.Views;assembly=ViralatApp"
+    xmlns:viewModels="clr-namespace:ViralatApp.ViewModels;assembly=ViralatApp"
+    xmlns:extension="clr-namespace:ViralatApp.Extesion;assembly=ViralatApp"
+    xmlns:IconFont="clr-namespace:ViralatApp.Resources.Fonts;assembly=ViralatApp">
+    <views:BasePage.Content>
+        <Grid  BackgroundColor="Transparent">
+
+            <ScrollView >
             <StackLayout>
                 <Grid
                     Padding="10,20,10,10"
-                    BackgroundColor="White"
-                    ColumnDefinitions="*, *, *"
-                    RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+                    ColumnDefinitions="Auto,*"
+                    RowDefinitions="Auto, Auto, Auto, Auto,Auto,Auto,Auto">
                     <Frame
                         Grid.Row="0"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="5"
+                        Grid.ColumnSpan="2"
                         Margin="20,25,20,10"
-                        Padding="3"
+                        Padding="3" 
+                        BackgroundColor="Transparent"
                         HasShadow="False">
                         <Frame.CornerRadius>
                             <OnPlatform x:TypeArguments="x:Single">
@@ -25,8 +31,9 @@
                                 <On Platform="Android">5</On>
                             </OnPlatform>
                         </Frame.CornerRadius>
-                        <StackLayout Padding="5,0" Orientation="Horizontal">
-                            <Image
+                        <StackLayout Padding="5,0" Orientation="Horizontal"
+                                    >
+                            <Image 
                                 Margin="60,0,30,0"
                                 Aspect="AspectFit"
                                 HorizontalOptions="Center"
@@ -37,24 +44,110 @@
                     </Frame>
                     <Label
                         Grid.Row="1"
-                        Grid.ColumnSpan="5"
-                        FontAttributes="Bold"
+                        Grid.ColumnSpan="2"
                         HorizontalOptions="CenterAndExpand"
-                        Text="Juan Pérez González"
-                        TextColor="Black" />
+                        Text="{Binding User.Name}"
+                        Style="{StaticResource LabelRegular}"/>
                     <Label
                         Grid.Row="2"
-                        Grid.ColumnSpan="5"
                         Margin="10,5"
-                        Text="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original." />
+                        Style="{StaticResource LabelRegular}"
+                        Grid.ColumnSpan="2"
+                        Text="{extension:Translate  AboutMe}" />
                     <Label
                         Grid.Row="3"
-                        Grid.ColumnSpan="3"
+                        Grid.ColumnSpan="2"
+                        Style="{StaticResource LabelMedium}"
+                        TextColor="{DynamicResource LetterLightColor}"
                         Margin="10,5"
-                        Text="- Ha adoptado a una perrita de 5 meses llamada Diana el día 25/09/2021.&#10;&#10; - Ha apadrinado a Spy, un cachorro de 3 meses.&#10;&#10; - Ha adoptado a un gato con  2 semanas de nacido." />
-                    
+                        Text="{Binding User.Description}" />
+                    <Label
+                        Grid.Row="4"
+                        Margin="10,5"
+                        Style="{StaticResource LabelRegular}"
+                        Grid.ColumnSpan="2"
+                        Text="{extension:Translate  AdoptionsHistories}" />
+                    <StackLayout BindableLayout.ItemsSource="{Binding User.AdoptionHistory}"
+                                 Grid.Row="5"
+                                 Grid.ColumnSpan="2"
+                                 Padding="20,0">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="x:String">
+                                <Grid ColumnDefinitions="Auto,*"
+                                      RowDefinitions="*">
+                                    <Image WidthRequest="8"
+                                           VerticalOptions="CenterAndExpand"
+                                           Margin="0,0,0,10"
+                                           HeightRequest="8">
+                                        <Image.Source>
+                         
+                                            <FontImageSource FontFamily="{StaticResource MaterialIcon}"
+                                                             Glyph="{x:Static IconFont:IconFont.Circle}"
+                                                             Color="Black"
+                                            />
+                                        </Image.Source>
+                                    </Image>
+                                    <Label Grid.Column="1" VerticalTextAlignment="Start"
+                                           Style="{StaticResource LabelMedium}"
+                                          TextColor="{DynamicResource LetterLightColor}"
+                                             Text="{Binding .}" />
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                    <ImageButton BackgroundColor="{DynamicResource SecondColor}"
+                                 Grid.Row="6"
+                                 Grid.Column="0"
+                                 Margin="40,20,10,20"
+                                 WidthRequest="40"
+                                 HeightRequest="40"
+                                 Padding="8"
+                                 Command="{Binding CallContactCommand}"
+                                 VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="EndAndExpand"
+                                 CornerRadius="10">
+                        <ImageButton.Source>
+                         
+                            <FontImageSource FontFamily="{StaticResource MaterialIcon}"
+                                             Glyph="{x:Static IconFont:IconFont.Phone}"
+                                             Color="White"
+                            />
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Label   Grid.Row="6"
+                             VerticalTextAlignment="Center"
+                             Style="{StaticResource LabelMedium}"
+                             Grid.Column="1">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{extension:Translate Contact,StringFormat='{0}' }" LineHeight="2"/>
+                                <Span Text="&#10;" />
+                                <Span Text=" " />
+                                <Span Text="{Binding User.Email,StringFormat='{0}'}" TextDecorations="Underline"
+                                      FontSize="15"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
                 </Grid>
             </StackLayout>
         </ScrollView>
-    </ContentPage.Content>
-</ContentPage>
+            <ImageButton BackgroundColor="{StaticResource PrimaryColor}"
+                         Padding="10,5,5,5"
+                         HeightRequest="40"
+                         WidthRequest="40"
+                         Margin="10"
+                         CornerRadius="20"
+                         VerticalOptions="StartAndExpand"
+                         Command="{Binding GoBackCommand}"
+                         HorizontalOptions="StartAndExpand">
+                <ImageButton.Source> 
+                                             
+                    <FontImageSource FontFamily="{StaticResource MaterialIcon}"
+                                     Glyph=" {x:Static IconFont:IconFont.Arrow_back_ios}"
+                                     Color="{DynamicResource SecondColor}"
+                    />
+                </ImageButton.Source>
+            </ImageButton>       
+            </Grid>
+    </views:BasePage.Content>
+</views:BasePage>

@@ -11,4 +11,85 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
+    <data name="Categories" xml:space="preserve">
+        <value>Categorias</value>
+    </data>
+    <data name="Category" xml:space="preserve">
+        <value>Categoria</value>
+    </data>
+    <data name="Search" xml:space="preserve">
+        <value>Buscar</value>
+    </data>
+    <data name="Favorites" xml:space="preserve">
+        <value>Favorites</value>
+    </data>
+    <data name="Messages" xml:space="preserve">
+        <value>Mensajes</value>
+    </data>
+    <data name="User" xml:space="preserve">
+        <value>Usuario</value>
+    </data>
+    <data name="Home" xml:space="preserve">
+        <value>Inicio</value>
+    </data>
+    <data name="Puppy" xml:space="preserve">
+        <value>Cachorro</value>
+    </data>
+    <data name="Adult" xml:space="preserve">
+        <value>Adulto</value>
+    </data>
+    <data name="Contact" xml:space="preserve">
+        <value>Contacto</value>
+    </data>
+    <data name="AboutMe" xml:space="preserve">
+        <value>Sobre mi</value>
+    </data>
+    <data name="AboutUs" xml:space="preserve">
+        <value>Sobre Nosotros</value>
+    </data>
+    <data name="AdoptionsHistories" xml:space="preserve">
+        <value>Historial de adopcion</value>
+    </data>
+    <data name="Age" xml:space="preserve">
+        <value>Año</value>
+    </data>
+    <data name="Gender" xml:space="preserve">
+        <value>Genero</value>
+    </data>
+    <data name="Weight" xml:space="preserve">
+        <value>Peso</value>
+    </data>
+    <data name="Name" xml:space="preserve">
+        <value>Nombre</value>
+    </data>
+    <data name="Description" xml:space="preserve">
+        <value>Descripcion</value>
+    </data>
+    <data name="Breed" xml:space="preserve">
+        <value>Raza</value>
+    </data>
+    <data name="Adopt" xml:space="preserve">
+        <value>Adoptar</value>
+    </data>
+    <data name="Donate" xml:space="preserve">
+        <value>Donar</value>
+    </data>
+    <data name="ApplicantInformation" xml:space="preserve">
+        <value>Información del aplicante</value>
+    </data>
+    <data name="TapHereCurrentUserISTheApplicant" xml:space="preserve">
+        <value>Toque aquí si el usuario actual ES el solicitante</value>
+    </data>
+    <data name="FirstName" xml:space="preserve">
+        <value>Nombre</value>
+    </data>
+    <data name="LastName" xml:space="preserve">
+        <value>Apellido</value>
+    </data>
+    <data name="Submit" xml:space="preserve">
+        <value>Enviar</value>
+    </data>
+    <data name="AdoptionForm" xml:space="preserve">
+        <value>Formulario de adopción</value>
+    </data>
 </root>

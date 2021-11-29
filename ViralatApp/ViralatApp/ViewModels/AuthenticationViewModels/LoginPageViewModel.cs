@@ -14,7 +14,7 @@ namespace ViralatApp.ViewModels
     {
         public DelegateCommand GoToSignUpPageCommand { get; set; }
         public ICommand LoginCommand { get; set; }
-        public string Email { get; set; }
+        public string  Email { get; set; }
         public string Password { get; set; }
         public LoginPageViewModel (INavigationService navigationService, IPageDialogService dialogService,IApiService apiService) : base(navigationService, dialogService,apiService)
         {
@@ -41,7 +41,7 @@ namespace ViralatApp.ViewModels
                 Settings.Email = Email;
                 Settings.Password = Password;
                 Settings.User = token.User.Name;
-                await navigationService.NavigateAsync(NavigationConstants.HomePage);
+                await navigationService.NavigateAsync(NavigationConstants.MenuPage);
             }
         }
 

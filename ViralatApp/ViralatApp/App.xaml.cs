@@ -6,6 +6,7 @@ using ViralatApp.Helpers;
 using ViralatApp.Services;
 using ViralatApp.ViewModels;
 using ViralatApp.Views;
+using ViralatApp.Views.MasterPages;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -26,19 +27,27 @@ namespace ViralatApp
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterSingleton<IApiService, ApiService>();
+            containerRegistry.RegisterSingleton<IUtilityService, UtilityService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<WelcomePage, WelcomePageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<SignUpPage, SignUpPageViewModel>();
-            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
-            containerRegistry.RegisterForNavigation<DetailPage, DetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<MenuPage, MenuViewModel>();
+            containerRegistry.RegisterForNavigation<PetDetailPage, PetDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<StartUpPage, StartUpPageViewModel>();
             containerRegistry.RegisterForNavigation<AdoptPage, AdoptPageViewModel>();
             containerRegistry.RegisterForNavigation<SponsorPage, SponsorPageViewModel>();
             containerRegistry.RegisterForNavigation<UserDetailPage, UserDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<RefugeDetailPage, RefugeDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<SearchPage, SearchPageViewModel>();
             containerRegistry.RegisterInstance<IApiClient<IViralataApi>>(new ApiClient<IViralataApi>(Config.ApiUrl));
-            containerRegistry.RegisterSingleton<IApiService, ApiService>();
+
+            #region Register ViewModel For TabView
+            containerRegistry.Register(typeof(HomeViewModel));
+            containerRegistry.Register(typeof(FavoriteViewModel));
+            #endregion
+
             
         }
     }

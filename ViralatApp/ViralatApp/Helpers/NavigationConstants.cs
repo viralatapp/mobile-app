@@ -6,14 +6,23 @@ namespace ViralatApp.Helpers
     {
         public const string StartUpPage= "StartUpPage";
         public const string LoginPage = "LoginPage";
-        public const string HomePage = "/HomePage";
+        public const string MenuPage = "/MenuPage";
         public const string SignUpPage = "/SignUpPage";
         public const string WelcomePage = "WelcomePage";
-        public const string DetailPage = "DetailPage";
-        public const string AdoptPage = "NavigationPage/AdoptPage";
+        public const string PetDetailPage = "PetDetailPage";
+        public const string AdoptPage = "AdoptPage";
         public const string SponsorPage = "SponsorPage";
-        public const string UserDetailPage = "NavigationPage/UserDetailPage";
-        public const string RefugeDetailPage = "NavigationPage/RefugeDetailPage";
+        public const string UserDetailPage = "UserDetailPage";
+        public const string RefugeDetailPage = "RefugeDetailPage";
         public const string RecoveryPassword = "RecoveryPassword";
+        public const string SearchPage = "SearchPage";
+
+        #region Parameters
+
+        
+        public const string FindPets = "FindPets";
+   
+
+        #endregion
     }
 }

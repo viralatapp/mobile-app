@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace ViralatApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SponsorPage : ContentPage
+    public partial class SponsorPage : BasePage
     {
         public SponsorPage()
         {

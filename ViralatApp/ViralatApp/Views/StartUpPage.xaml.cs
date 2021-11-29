@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace ViralatApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StartUpPage : ContentPage
+    public partial class StartUpPage : BasePage
     {
         public StartUpPage()
         {

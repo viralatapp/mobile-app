@@ -6,7 +6,8 @@ namespace ViralatApp.Helpers
 {
     public static class Settings
     {
-        
+        public static string LanguageConfigured = "ES";
+
         public static Task<string> Token 
         {
             get=>SecureStorage.GetAsync(nameof(Token));
