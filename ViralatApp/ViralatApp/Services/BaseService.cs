@@ -68,7 +68,7 @@ namespace ViralatApp.Services
             {
                 var jsonResult = await responseMessage.Content.ReadAsStringAsync().ConfigureAwait(false);
                 var result = await Task.Run(() => JsonConvert.DeserializeObject<HttpResponseMessage>(jsonResult));
-                return null;
+                return Response<TData>.Error(result);
             }
         }
     }

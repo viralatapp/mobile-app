@@ -42,7 +42,7 @@ namespace ViralatApp
             containerRegistry.RegisterForNavigation<RefugeDetailPage, RefugeDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<SearchPage, SearchPageViewModel>();
             containerRegistry.RegisterInstance<IApiClient<IViralataApi>>(new ApiClient<IViralataApi>(Config.ApiUrl));
-
+            containerRegistry.RegisterForNavigation<RegisterPetPage, RegisterPetPageViewModel>();
             #region Register ViewModel For TabView
             containerRegistry.Register(typeof(HomeViewModel));
             containerRegistry.Register(typeof(FavoriteViewModel));

@@ -43,6 +43,8 @@
             </Frame>
             <ImageButton Source="profile"
                          HeightRequest="40" 
+                         WidthRequest="40"
+                         CornerRadius="20"
                          Grid.Column="1"
                          HorizontalOptions="End" 
                          VerticalOptions="Start" 
@@ -115,6 +117,7 @@
                                 <Grid RowDefinitions="*,Auto">
                                     <Image Source="{Binding Image}"
                                            HorizontalOptions ="Fill"
+                                           Aspect="AspectFill"
                                            Grid.Row="0"/>
                                     <ImageButton BackgroundColor="{DynamicResource SecondColor}"
                                                  Grid.Row="0"

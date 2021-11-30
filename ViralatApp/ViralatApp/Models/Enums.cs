@@ -2,7 +2,7 @@
 {
     public enum EGender
     {
-        Femenino = 0,
-        Masculino = 1
+        Female = 0,
+        Male = 1
     }
 }

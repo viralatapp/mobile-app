@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 using ViralatApp.Annotations;
@@ -8,10 +9,17 @@ namespace ViralatApp.Models
 {
     public class Pet:INotifyPropertyChanged
     {
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("breed")]
+        public string Breed { get; set; }
+
+        [JsonProperty("images")]
+        public List<string> Images { get; set; }
+
         [JsonProperty("user")]
         public string User { get; set; }
-
-        public int Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -25,19 +33,16 @@ namespace ViralatApp.Models
         [JsonProperty("description")]
         public string Description { get; set; }
 
-        [JsonProperty("type")]
-        public string Type { get; set; }
-
-        [JsonProperty("breed")]
-        public string Breed { get; set; }
-
         [JsonProperty("sex")]
         public string Sex { get; set; }
 
         [JsonProperty("address")]
         public string Address { get; set; }
 
-        public string Image { get; set; }
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+        public string Image => Images?.FirstOrDefault();
         [JsonIgnore]
         public bool IsFavorite { get; set; }
 
@@ -48,7 +53,23 @@ namespace ViralatApp.Models
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
+    public class PetResponse
+    {
+        [JsonProperty("results")]
+        public List<Pet> Results { get; set; }
 
+        [JsonProperty("page")]
+        public int Page { get; set; }
+
+        [JsonProperty("limit")]
+        public int Limit { get; set; }
+
+        [JsonProperty("totalPages")]
+        public int TotalPages { get; set; }
+
+        [JsonProperty("totalResults")]
+        public int TotalResults { get; set; }
+    }
     public class Adoption
     {
         public string Id { get; set; }

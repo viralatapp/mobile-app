@@ -16,7 +16,8 @@ namespace ViralatApp.Helpers
         public const string RefugeDetailPage = "RefugeDetailPage";
         public const string RecoveryPassword = "RecoveryPassword";
         public const string SearchPage = "SearchPage";
-
+        public const string RegisterPetPage = "RegisterPetPage"; 
+ 
         #region Parameters
 
         

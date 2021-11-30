@@ -52,9 +52,9 @@ namespace ViralatApp.ViewModels
 
        public async Task InitializeAsync(INavigationParameters parameters)
        {
-           if (parameters.ContainsKey(NavigationConstants.FindPets))
+           if (parameters.ContainsKey(NavigationConstants.SearchPage))
            {
-               Search = parameters[NavigationConstants.FindPets].ToString();
+               Search = parameters[NavigationConstants.SearchPage].ToString();
            }
           
        }

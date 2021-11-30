@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extension="clr-namespace:ViralatApp.Extesion;assembly=ViralatApp"
+             xmlns:controls="clr-namespace:ViralatApp.Controls;assembly=ViralatApp"
+             x:Class="ViralatApp.Views.MasterPages.RegisterPetPage">
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+              ColumnDefinitions="*,*">
+            <StackLayout BindableLayout.ItemsSource="{Binding PetImages}"
+                         Grid.ColumnSpan="2"
+                         HorizontalOptions="CenterAndExpand"/>
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Image Aspect="AspectFit"
+                               HeightRequest="250"
+                               WidthRequest="150"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            <Label Text="{extension:Translate  PetType}"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2"/>
+            <Picker Grid.Row="2"
+                    Grid.ColumnSpan="2"/>
+            <Label Text="{extension:Translate  PetName}"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="2"/>
+           <Frame Grid.Row="4"
+                  Grid.ColumnSpan="2">
+               <controls:CustomEntry />
+           </Frame>
+            <Label Text="{extension:Translate  Breed}"
+                   Grid.Row="5"
+                   Grid.ColumnSpan="2"/>
+            <Frame                    Grid.Row="6"
+                                      Grid.ColumnSpan="2">
+                <controls:CustomEntry />
+            </Frame>
+            <Label Text="{extension:Translate  Age}"
+                   Grid.Row="7"
+                   Grid.Column="0"/>
+            <Frame                    Grid.Row="8"
+                                      Grid.Column="0">
+                <controls:CustomEntry />
+            </Frame>
+            <Label Text="{extension:Translate  Weight}"
+                   Grid.Row="7"
+                   Grid.Column="1"/>
+            <Frame Grid.Row="8"
+                   Grid.Column="1">
+                <controls:CustomEntry />
+            </Frame>
+            <Label Text="{extension:Translate  Gender}"
+                   Grid.Row="9"
+                   Grid.ColumnSpan="2"/>
+            <Picker Grid.Row="10"
+                    Grid.ColumnSpan="2"/>
+            <Label Text="{extension:Translate  Address}"
+                   Grid.Row="11"
+                   Grid.Column="1"/>
+            <Frame>
+                <controls:CustomEntry />
+            </Frame>
+            <Label Text="{extension:Translate  Description}"
+                   Grid.Row="12"
+                   Grid.ColumnSpan="2"/>
+            <Frame Grid.Row="13"
+                   Grid.ColumnSpan="2">
+                <Editor AutoSize="TextChanges" />
+            </Frame>
+            <Button  Grid.Row="14"
+                     Grid.ColumnSpan="2"
+
+                     Text="{extension:Translate Summit}"
+                     Margin="2,20,2,0"
+                     Style="{StaticResource PrimaryStyleButton}"
+                     Padding="18"
+                     ImageSource="track"
+                     HorizontalOptions="FillAndExpand"
+                     ContentLayout="left" 
+                     Command="{Binding SummitCommand}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

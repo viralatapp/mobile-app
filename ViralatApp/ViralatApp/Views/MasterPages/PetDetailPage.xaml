@@ -25,9 +25,9 @@
 
                 <Image 
                     Source="{Binding Pet.Image}" 
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Aspect="AspectFit"
+                    Aspect="AspectFill"
+                    WidthRequest="250"
+                    HeightRequest="250"
                     />
             </Frame>
 

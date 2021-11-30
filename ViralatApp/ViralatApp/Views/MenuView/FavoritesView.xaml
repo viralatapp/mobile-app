@@ -11,10 +11,10 @@
              xmlns:IconFont="clr-namespace:ViralatApp.Resources.Fonts;assembly=ViralatApp"
              x:Class="ViralatApp.Views.MenuView.FavoritesView">
     <ContentView.Resources>
-        <converters1:BoolToObjectConverter TrueObject="{x:Static IconFont:IconFont.Favorite}"
-                                          FalseObject="{x:Static IconFont:IconFont.Favorite_outline}"
-                                          x:Key="BoolFavoriteConverter"/>
         <converters:AgeToStringConverter x:Key="AgeToStringConverter"/>
+                <converters1:BoolToObjectConverter TrueObject="{x:Static IconFont:IconFont.Favorite}"
+                                                  FalseObject="{x:Static IconFont:IconFont.Favorite_outline}"
+                                                  x:Key="BoolFavoriteConverter"/>
     </ContentView.Resources>
     <Grid RowDefinitions="Auto,*"
           Padding="15"
