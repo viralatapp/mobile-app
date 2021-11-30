@@ -20,9 +20,8 @@ namespace ViralatApp
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync(NavigationConstants.StartUpPage);
-
-
+            //NavigationService.NavigateAsync(NavigationConstants.StartUpPage);
+            NavigationService.NavigateAsync(NavigationConstants.NewPetPage);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -41,6 +40,7 @@ namespace ViralatApp
             containerRegistry.RegisterForNavigation<UserDetailPage, UserDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<RefugeDetailPage, RefugeDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<SearchPage, SearchPageViewModel>();
+            containerRegistry.RegisterForNavigation<NewPetPage, NewPetViewModel>();
             containerRegistry.RegisterInstance<IApiClient<IViralataApi>>(new ApiClient<IViralataApi>(Config.ApiUrl));
 
             #region Register ViewModel For TabView
