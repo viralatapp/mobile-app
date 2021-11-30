@@ -23,7 +23,7 @@
                     </OnPlatform>
                 </Frame.CornerRadius>
                 <StackLayout Orientation="Horizontal" Padding="5,0">
-                    <controls:CustomEntry Keyboard="Text" Text="{Binding Fullname}" Placeholder="Fullname" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    <controls:CustomEntry Keyboard="Text" Text="{Binding Name}" Placeholder="Name" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                 </StackLayout>
             </Frame>
             <Frame BackgroundColor="Transparent" Margin="0,0,0,10" HasShadow="False" BorderColor="#dfe4e9" Padding="3" HorizontalOptions="FillAndExpand">
@@ -34,10 +34,10 @@
                     </OnPlatform>
                 </Frame.CornerRadius>
                 <StackLayout Orientation="Horizontal" Padding="5,0">
-                    <controls:CustomEntry Keyboard="Text" Text="{Binding Username}" Placeholder="Email" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    <controls:CustomEntry Keyboard="Numeric"  Text="{Binding Age}" Placeholder="Age" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                 </StackLayout>
             </Frame>
-            <Frame BackgroundColor="Transparent" HasShadow="False" BorderColor="#dfe4e9" Padding="3" HorizontalOptions="FillAndExpand">
+            <Frame BackgroundColor="Transparent" Margin="0,0,0,10" HasShadow="False" BorderColor="#dfe4e9" Padding="3" HorizontalOptions="FillAndExpand">
                 <Frame.CornerRadius>
                     <OnPlatform x:TypeArguments="x:Single">
                         <On Platform="iOS">10</On>
@@ -45,7 +45,64 @@
                     </OnPlatform>
                 </Frame.CornerRadius>
                 <StackLayout Orientation="Horizontal" Padding="5,0">
-                    <controls:CustomEntry Keyboard="Text" Text="{Binding Password}" Placeholder="Password" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0" IsPassword="True"/>
+                    <controls:CustomEntry Keyboard="Numeric"  Text="{Binding Weight}" Placeholder="Weight" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="Transparent" Margin="0,0,0,10" HasShadow="False" BorderColor="#dfe4e9" Padding="3" HorizontalOptions="FillAndExpand">
+                <Frame.CornerRadius>
+                    <OnPlatform x:TypeArguments="x:Single">
+                        <On Platform="iOS">10</On>
+                        <On Platform="Android">5</On>
+                    </OnPlatform>
+                </Frame.CornerRadius>
+                <StackLayout Orientation="Horizontal" Padding="5,0">
+                    <controls:CustomEntry Keyboard="Text"  Text="{Binding Description}" Placeholder="Description" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="Transparent" Margin="0,0,0,10" HasShadow="False" BorderColor="#dfe4e9" Padding="3" HorizontalOptions="FillAndExpand">
+                <Frame.CornerRadius>
+                    <OnPlatform x:TypeArguments="x:Single">
+                        <On Platform="iOS">10</On>
+                        <On Platform="Android">5</On>
+                    </OnPlatform>
+                </Frame.CornerRadius>
+                <StackLayout Orientation="Horizontal" Padding="5,0">
+                    <controls:CustomEntry Keyboard="Text"  Text="{Binding Type}" Placeholder="Type" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="Transparent" Margin="0,0,0,10" HasShadow="False" BorderColor="#dfe4e9" Padding="3" HorizontalOptions="FillAndExpand">
+                <Frame.CornerRadius>
+                    <OnPlatform x:TypeArguments="x:Single">
+                        <On Platform="iOS">10</On>
+                        <On Platform="Android">5</On>
+                    </OnPlatform>
+                </Frame.CornerRadius>
+                <StackLayout Orientation="Horizontal" Padding="5,0">
+                    <controls:CustomEntry Keyboard="Text"  Text="{Binding Breed}" Placeholder="Breed" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="Transparent" Margin="0,0,0,10" HasShadow="False" BorderColor="#dfe4e9" Padding="3" HorizontalOptions="FillAndExpand">
+                <Frame.CornerRadius>
+                    <OnPlatform x:TypeArguments="x:Single">
+                        <On Platform="iOS">10</On>
+                        <On Platform="Android">5</On>
+                    </OnPlatform>
+                </Frame.CornerRadius>
+                <StackLayout Padding="5,0">
+                    <Label Text="Gender" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" FontSize="Medium"/>
+                    <RadioButton Content="Male" IsChecked="True"/>
+                    <RadioButton Content="Female"/>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="Transparent" Margin="0,0,0,10" HasShadow="False" BorderColor="#dfe4e9" Padding="3" HorizontalOptions="FillAndExpand">
+                <Frame.CornerRadius>
+                    <OnPlatform x:TypeArguments="x:Single">
+                        <On Platform="iOS">10</On>
+                        <On Platform="Android">5</On>
+                    </OnPlatform>
+                </Frame.CornerRadius>
+                <StackLayout Orientation="Horizontal" Padding="5,0">
+                    <controls:CustomEntry Keyboard="Text"  Text="{Binding Address}" Placeholder="Address" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                 </StackLayout>
             </Frame>
             <Button Text="Create pet"
