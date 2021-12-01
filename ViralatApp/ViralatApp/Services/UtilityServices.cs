@@ -36,6 +36,7 @@ namespace ViralatApp.Services
             }
             catch (ArgumentNullException anEx)
             {
+                //Display an "alert" if the pet's owner has no phone number registered?
                 throw anEx;
             }
             catch (FeatureNotSupportedException ex)
