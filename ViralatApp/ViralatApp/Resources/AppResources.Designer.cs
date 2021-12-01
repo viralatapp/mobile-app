@@ -79,6 +79,15 @@ namespace ViralatApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        internal static string Address {
+            get {
+                return ResourceManager.GetString("Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adopt.
         /// </summary>
         internal static string Adopt {
@@ -160,11 +169,38 @@ namespace ViralatApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to City.
+        /// </summary>
+        internal static string City {
+            get {
+                return ResourceManager.GetString("City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         internal static string Contact {
             get {
                 return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        internal static string Country {
+            get {
+                return ResourceManager.GetString("Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Birth Date.
+        /// </summary>
+        internal static string DateOfBirth {
+            get {
+                return ResourceManager.GetString("DateOfBirth", resourceCulture);
             }
         }
         
@@ -246,6 +282,42 @@ namespace ViralatApp.Resources {
         internal static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pet Information.
+        /// </summary>
+        internal static string PetInformation {
+            get {
+                return ResourceManager.GetString("PetInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pet Owner&apos;s Assessment.
+        /// </summary>
+        internal static string PetOwnerAssessment {
+            get {
+                return ResourceManager.GetString("PetOwnerAssessment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pet Owner&apos;s Location.
+        /// </summary>
+        internal static string PetOwnerLocation {
+            get {
+                return ResourceManager.GetString("PetOwnerLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pet Owner&apos;s Name.
+        /// </summary>
+        internal static string PetOwnerName {
+            get {
+                return ResourceManager.GetString("PetOwnerName", resourceCulture);
             }
         }
         

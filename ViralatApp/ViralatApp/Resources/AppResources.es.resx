@@ -198,4 +198,28 @@
   <data name="AdoptionForm" xml:space="preserve">
     <value>Formulario de adopción</value>
   </data>
+  <data name="Address" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Ciudad</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="DateOfBirth" xml:space="preserve">
+    <value>Fecha de Nac.</value>
+  </data>
+  <data name="PetInformation" xml:space="preserve">
+    <value>Información de la mascota</value>
+  </data>
+  <data name="PetOwnerAssessment" xml:space="preserve">
+    <value>Evaluación del Dueño de la Mascota</value>
+  </data>
+  <data name="PetOwnerLocation" xml:space="preserve">
+    <value>Ubicación del Dueño</value>
+  </data>
+  <data name="PetOwnerName" xml:space="preserve">
+    <value>Dueño de la Mascota</value>
+  </data>
 </root>

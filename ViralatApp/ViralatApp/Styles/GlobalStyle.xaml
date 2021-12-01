@@ -15,6 +15,12 @@
     <x:String x:Key="LetterRegular">RobotoRegular</x:String>
     <x:String x:Key="LetterMedium">RobotoMedium</x:String>
     <x:String x:Key="MaterialIcon">materialdesignicons</x:String>
+    <Style x:Key="FormSubtitleLabel"
+           TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="FontSize" Value="Large"></Setter>
+    </Style>
     <Style x:Key="LabelRegular"
            TargetType="Label">
         <Setter Property="FontFamily" Value="{StaticResource LetterRegular}"/>

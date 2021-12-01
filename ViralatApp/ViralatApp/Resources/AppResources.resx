@@ -198,4 +198,28 @@
   <data name="AdoptionForm" xml:space="preserve">
     <value>Adoption Form</value>
   </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="DateOfBirth" xml:space="preserve">
+    <value>Birth Date</value>
+  </data>
+  <data name="PetInformation" xml:space="preserve">
+    <value>Pet Information</value>
+  </data>
+  <data name="PetOwnerAssessment" xml:space="preserve">
+    <value>Pet Owner's Assessment</value>
+  </data>
+  <data name="PetOwnerLocation" xml:space="preserve">
+    <value>Pet Owner's Location</value>
+  </data>
+  <data name="PetOwnerName" xml:space="preserve">
+    <value>Pet Owner's Name</value>
+  </data>
 </root>
