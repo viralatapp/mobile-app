@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage
+    x:Class="ViralatApp.Views.PaymentMethodPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ViralatApp.Views"    
+    xmlns:IconFont="clr-namespace:ViralatApp.Resources.Fonts;assembly=ViralatApp">
+    <Grid>
+    <ScrollView>
+        <StackLayout>
+            <local:TittleView />
+            <Grid
+                Padding="10,20,10,10"
+                BackgroundColor="Transparent"
+                ColumnDefinitions="*, *, *"
+                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="4"
+                    Margin="20,15,100,0"
+                    Padding="10"
+                    BackgroundColor="White"
+                    Command="{Binding GoToAddNewCardPageCommand}"
+                    ContentLayout="left"
+                    CornerRadius="10"
+                    FontFamily="RobotoRegular"
+                    FontSize="Body"
+                    HorizontalOptions="CenterAndExpand"
+                    ImageSource="addCard"
+                    Text="Add New Card"
+                    TextColor="#431515" />
+
+                <Button
+                    Grid.Row="10"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="4"
+                    Margin="20,15,100,0"
+                    Padding="10"
+                    BackgroundColor="#F9543B"
+                    ContentLayout="left"
+                    CornerRadius="10"
+                    FontFamily="RobotoRegular"
+                    FontSize="Body"
+                    HorizontalOptions="CenterAndExpand"
+                    ImageSource="track"
+                    Text="Sponsor"
+                    TextColor="White" />
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+        <ImageButton
+            Margin="10"
+            Padding="10,5,5,5"
+            BackgroundColor="{StaticResource PrimaryColor}"
+            Command="{Binding GoBackCommand}"
+            CornerRadius="20"
+            HeightRequest="40"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="StartAndExpand"
+            WidthRequest="40">
+            <ImageButton.Source>
+
+                <FontImageSource
+                    FontFamily="{StaticResource MaterialIcon}"
+                    Glyph="{x:Static IconFont:IconFont.Arrow_back_ios}"
+                    Color="{DynamicResource SecondColor}" />
+            </ImageButton.Source>
+        </ImageButton>
+    </Grid>
+</local:BasePage>
