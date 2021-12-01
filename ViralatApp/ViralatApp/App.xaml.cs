@@ -20,6 +20,7 @@ namespace ViralatApp
         {
             InitializeComponent();
 
+            
             NavigationService.NavigateAsync(NavigationConstants.StartUpPage);
 
 
@@ -38,6 +39,8 @@ namespace ViralatApp
             containerRegistry.RegisterForNavigation<StartUpPage, StartUpPageViewModel>();
             containerRegistry.RegisterForNavigation<AdoptPage, AdoptPageViewModel>();
             containerRegistry.RegisterForNavigation<SponsorPage, SponsorPageViewModel>();
+            containerRegistry.RegisterForNavigation<AddNewCardPage, AddNewCardViewModel>();
+            containerRegistry.RegisterForNavigation<PaymentMethodPage, PaymentMethodViewModel>();
             containerRegistry.RegisterForNavigation<UserDetailPage, UserDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<RefugeDetailPage, RefugeDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<SearchPage, SearchPageViewModel>();

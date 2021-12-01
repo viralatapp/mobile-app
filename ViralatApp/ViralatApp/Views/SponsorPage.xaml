@@ -3,8 +3,10 @@
     x:Class="ViralatApp.Views.SponsorPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:ViralatApp.Controls"    
-    xmlns:local="clr-namespace:ViralatApp.Views">
+    xmlns:controls="clr-namespace:ViralatApp.Controls"
+    xmlns:fastEntry="clr-namespace:XamarinFastEntrySample.FastEntry;assembly=XamarinFastEntry.Behaviors"
+    xmlns:local="clr-namespace:ViralatApp.Views"
+    xmlns:models="clr-namespace:ViralatApp.Models">
 
     <ScrollView>
         <StackLayout>
@@ -13,95 +15,26 @@
                 Padding="10,20,10,10"
                 BackgroundColor="White"
                 ColumnDefinitions="*, *, *"
+                HorizontalOptions="Center"
                 RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto">
 
-                <Frame
+                <Label
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="5"
-                    Margin="20,25,20,10"
-                    Padding="3"
-                    BackgroundColor="Transparent"
-                    BorderColor="#dfe4e9"
-                    HasShadow="False"
-                    HorizontalOptions="FillAndExpand">
-                    <Frame.CornerRadius>
-                        <OnPlatform x:TypeArguments="x:Single">
-                            <On Platform="iOS">10</On>
-                            <On Platform="Android">5</On>
-                        </OnPlatform>
-                    </Frame.CornerRadius>
-                    <StackLayout Padding="5,0" Orientation="Horizontal">
-                        <Image HorizontalOptions="CenterAndExpand" Source="creditcard" />
-                        <controls:CustomEntry
-                            Margin="0,0,20,0"
-                            FontAttributes="None"
-                            FontFamily="RobotoRegular"
-                            HorizontalOptions="CenterAndExpand"
-                            Keyboard="Text"
-                            Placeholder="XXXX-XXXX-XXXX-XXXX"
-                            TextColor="Black" />
-                    </StackLayout>
-                </Frame>
+                    Padding="5"
+                    Margin="10,30,10,30"
+                    FontSize="Medium"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    Text="¡Apadrina a {nombre de la mascota}!" />
+
                 <Frame
                     Grid.Row="1"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Margin="20,25,20,10"
-                    Padding="3"
-                    BackgroundColor="Transparent"
-                    BorderColor="#dfe4e9"
-                    HasShadow="False"
-                    HorizontalOptions="FillAndExpand">
-                    <Frame.CornerRadius>
-                        <OnPlatform x:TypeArguments="x:Single">
-                            <On Platform="iOS">10</On>
-                            <On Platform="Android">5</On>
-                        </OnPlatform>
-                    </Frame.CornerRadius>
-                    <StackLayout Padding="5,0" Orientation="Horizontal">
-                        <controls:CustomEntry
-                            Margin="10,0,20,0"
-                            FontAttributes="None"
-                            FontFamily="RobotoRegular"
-                            HorizontalOptions="CenterAndExpand"
-                            Keyboard="Text"
-                            Placeholder="MM / YY"
-                            TextColor="Black" />
-                    </StackLayout>
-                </Frame>
-                <Frame
-                    Grid.Row="1"
-                    Grid.Column="3"
-                    Grid.ColumnSpan="2"
-                    Margin="20,25,20,10"
-                    Padding="3"
-                    BackgroundColor="Transparent"
-                    BorderColor="#dfe4e9"
-                    HasShadow="False"
-                    HorizontalOptions="FillAndExpand">
-                    <Frame.CornerRadius>
-                        <OnPlatform x:TypeArguments="x:Single">
-                            <On Platform="iOS">10</On>
-                            <On Platform="Android">5</On>
-                        </OnPlatform>
-                    </Frame.CornerRadius>
-                    <StackLayout Padding="5,0" Orientation="Horizontal">
-                        <controls:CustomEntry
-                            Margin="20,0,20,0"
-                            FontAttributes="None"
-                            FontFamily="RobotoRegular"
-                            HorizontalOptions="CenterAndExpand"
-                            Keyboard="Text"
-                            Placeholder="CVV"
-                            TextColor="Black" />
-                    </StackLayout>
-                </Frame>
-                <Frame
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    Grid.ColumnSpan="3"
-                    Margin="20,25,20,10"
+                    Grid.ColumnSpan="4"
+                    Margin="90,30,10,30"
                     Padding="3"
                     BackgroundColor="Transparent"
                     BorderColor="#dfe4e9"
@@ -113,26 +46,38 @@
                             <On Platform="Android">5</On>
                         </OnPlatform>
                     </Frame.CornerRadius>
-                    <StackLayout Padding="5,0" Orientation="Horizontal">
-                        <controls:CustomEntry
+                    <StackLayout
+                        Padding="5,0"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+                        <Entry
                             Margin="10,0,20,0"
                             FontAttributes="None"
                             FontFamily="RobotoRegular"
                             HorizontalOptions="CenterAndExpand"
                             Keyboard="Text"
                             Placeholder="$ Monto"
-                            TextColor="Black" />
+                            TextColor="Black">
+                            <Entry.Behaviors>
+                                <fastEntry:XamarinFastEntryBehaviour
+                                    IsAmount="True"
+                                    Mask="$ ##### "
+                                    MaxLength="8" />
+                            </Entry.Behaviors>
+                        </Entry>
                     </StackLayout>
                 </Frame>
                 <Label
-                    Grid.Row="3"
+                    Grid.Row="2"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Margin="20,5,10,5">
+                    Grid.ColumnSpan="3"
+                    Margin="20,5,10,5"
+                    HorizontalOptions="CenterAndExpand">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span
                                 FontAttributes="Bold"
+                                FontSize="Medium"
                                 Text="Pagos Recurrentes"
                                 TextColor="Black" />
                         </FormattedString>
@@ -141,7 +86,8 @@
                 <CheckBox
                     Grid.Row="4"
                     Grid.Column="0"
-                    Margin="30,0,0,0"
+                    Grid.ColumnSpan="3"
+                    Margin="25,0,0,0"
                     HorizontalOptions="Start"
                     Visual="Material"
                     WidthRequest="30"
@@ -150,7 +96,8 @@
                 <Label
                     Grid.Row="4"
                     Grid.Column="1"
-                    Grid.ColumnSpan="1"
+                    Grid.ColumnSpan="4"
+                    Margin="20,0,0,0"
                     FontSize="16"
                     Text="Mensual"
                     TextColor="Black"
@@ -159,7 +106,7 @@
                 <CheckBox
                     Grid.Row="5"
                     Grid.Column="0"
-                    Margin="30,0,0,0"
+                    Margin="25,0,0,0"
                     HorizontalOptions="Start"
                     Visual="Material"
                     WidthRequest="30"
@@ -168,7 +115,8 @@
                 <Label
                     Grid.Row="5"
                     Grid.Column="1"
-                    Grid.ColumnSpan="1"
+                    Grid.ColumnSpan="2"
+                    Margin="20,0,0,0"
                     FontSize="16"
                     Text="Trimestral"
                     TextColor="Black"
@@ -176,7 +124,7 @@
                 <CheckBox
                     Grid.Row="6"
                     Grid.Column="0"
-                    Margin="30,0,0,0"
+                    Margin="25,0,0,0"
                     HorizontalOptions="Start"
                     Visual="Material"
                     WidthRequest="30"
@@ -186,6 +134,7 @@
                     Grid.Row="6"
                     Grid.Column="1"
                     Grid.ColumnSpan="1"
+                    Margin="20,0,0,0"
                     FontSize="16"
                     Text="Anual"
                     TextColor="Black"
@@ -194,25 +143,27 @@
                 <CheckBox
                     Grid.Row="7"
                     Grid.Column="0"
-                    Margin="30,0,0,0"
+                    Margin="25,0,0,0"
                     HorizontalOptions="Start"
-                    Visual="Material"
+                    Visual="Default"
                     WidthRequest="30"
                     Color="LightGray" />
 
                 <Label
                     Grid.Row="7"
                     Grid.Column="1"
-                    FontSize="16"
+                    Grid.ColumnSpan="2"
+                    Margin="20,0,0,0"
+                    FontSize="Body"
                     Text="Una Vez"
                     TextColor="Black"
                     VerticalOptions="Center" />
 
                 <Button
-                    Grid.Row="8"
-                    Grid.Column="1"
-                    Grid.ColumnSpan="3"
-                    Margin="20,0,20,0"
+                    Grid.Row="9"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Margin="90,0,10,0"
                     Padding="10"
                     BackgroundColor="#F9543B"
                     ContentLayout="left"
@@ -221,6 +172,7 @@
                     FontSize="Body"
                     HorizontalOptions="CenterAndExpand"
                     ImageSource="track"
+                    Command="{Binding GoToPaymentMethodPageCommand}"
                     Text="Sponsor"
                     TextColor="White" />
             </Grid>
