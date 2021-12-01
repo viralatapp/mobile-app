@@ -58,10 +58,13 @@
                      Auto"
                       RowSpacing="10"
                       Padding="15,20,15,10" >
+                    
+                    <!-- Section: Pet Information -->
+                    
                     <Label Grid.Row="0" Grid.ColumnSpan="2"
-                           Text="{extensions:Translate PetInformation}" Style="{StaticResource LabelRegular}"/>
-                    <Label Grid.Row="1" Grid.ColumnSpan="2"
-                           Text="Name: {Diana}"
+                           Text="{extensions:Translate PetInformation}" Style="{StaticResource FormSubtitleLabel}"/>
+                        <!--Style="{StaticResource LabelRegular}"-->
+                        <Label Grid.Row="1" Grid.ColumnSpan="2"
                            Style="{StaticResource DescriptionLabelStyle}">
                         <Label.FormattedText>
                             <FormattedString>
@@ -81,8 +84,7 @@
                         </Label.FormattedText>
                     </Label>
                     <Label Grid.Row="3" Grid.ColumnSpan="2"
-                           Style="{StaticResource DescriptionLabelStyle}"
-                           >
+                           Style="{StaticResource DescriptionLabelStyle}">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="{extensions:Translate Age}"/>
@@ -99,8 +101,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label Grid.Row="4" Grid.Column="1"
-                           Text="Sex: {Female}" Style="{StaticResource DescriptionLabelStyle}" >
+                    <Label Grid.Row="4" Grid.Column="1" Style="{StaticResource DescriptionLabelStyle}" >
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="{extensions:Translate Gender}"/>
@@ -109,10 +110,9 @@
                         </Label.FormattedText>
                     </Label>
 
-                        <Label Grid.Row="5" Grid.ColumnSpan="2"
-                               HorizontalTextAlignment="Center"
-                               Margin="10"
-                               Text="{extensions:Translate ApplicantInformation}"   FontSize="Large" />
+                    <!-- Section: Applicant Information -->
+                    <Label Grid.Row="5" Grid.ColumnSpan="2"
+                        Text="{extensions:Translate ApplicantInformation}" Style="{StaticResource FormSubtitleLabel}"/>
                     <Label Grid.Row="6" Grid.ColumnSpan="2"
                            Text="{extensions:Translate TapHereCurrentUserISTheApplicant}" Padding="40,5,0,0" />
                     <CheckBox Grid.Row="6" />
@@ -136,12 +136,19 @@
                                                   Style="{StaticResource CustomEntryStyle}" />
                         </StackLayout>
                     </Frame>
-                    <Frame Grid.Row="8" Grid.Column="0" Style="{StaticResource CustomEntryFrameStyle}">
-                        <StackLayout Orientation="Horizontal" Padding="5,0">
-                            <DatePicker Date="{Binding User.DateBirth}"  
-                                                  Style="{StaticResource CustomEntryStyle}" />
-                        </StackLayout>
-                    </Frame>
+                        <Label Grid.Row="8" Grid.Column="0"
+                        Style="{StaticResource DescriptionLabelStyle}" VerticalOptions="Center" HorizontalOptions="End">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{extensions:Translate DateOfBirth,StringFormat='{0}:'}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    <Frame Grid.Row="8" Grid.Column="1" Style="{StaticResource CustomEntryFrameStyle}">
+                            <StackLayout Orientation="Horizontal" Padding="5,0">
+                                <DatePicker Date="{Binding User.DateBirth}" Style="{StaticResource CustomEntryStyle}" />
+                            </StackLayout>
+                        </Frame>
                     <Frame Grid.Row="9" Grid.ColumnSpan="2" Style="{StaticResource CustomEntryFrameStyle}">
                         <Frame.CornerRadius>
                             <OnPlatform x:TypeArguments="x:Single">
@@ -150,7 +157,7 @@
                             </OnPlatform>
                         </Frame.CornerRadius>
                         <StackLayout Orientation="Horizontal" Padding="5,0">
-                            <controls:CustomEntry Text="{Binding User.Address}" Placeholder="Address"
+                            <controls:CustomEntry Text="{Binding User.Address}" Placeholder="{extensions:Translate Address}"
                                                   Style="{StaticResource CustomEntryStyle}" />
                         </StackLayout>
                     </Frame>
@@ -162,7 +169,7 @@
                             </OnPlatform>
                         </Frame.CornerRadius>
                         <StackLayout Orientation="Horizontal" Padding="5,0">
-                            <controls:CustomEntry Text="{Binding User.City}" Placeholder="City" Style="{StaticResource CustomEntryStyle}" />
+                            <controls:CustomEntry Text="{Binding User.City}" Placeholder="{extensions:Translate City}" Style="{StaticResource CustomEntryStyle}" />
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Row="10" Grid.Column="1" Style="{StaticResource CustomEntryFrameStyle}">
@@ -173,29 +180,30 @@
                             </OnPlatform>
                         </Frame.CornerRadius>
                         <StackLayout Orientation="Horizontal" Padding="5,0">
-                            <controls:CustomEntry Text="{Binding User.Country}" Placeholder="Country"
+                            <controls:CustomEntry Text="{Binding User.Country}" Placeholder="{extensions:Translate Country}"
                                                   Style="{StaticResource CustomEntryStyle}" />
                         </StackLayout>
                     </Frame>
 
-                    <Label Grid.Row="11" Grid.ColumnSpan="2"
-                           Text="" FontSize="Large" />
+                    <!-- Section: Refuge / Owner Information -->
+                    <Label Grid.Row="11" Grid.ColumnSpan="2" 
+                    Text="{extensions:Translate PetOwnerAssessment}" Style="{StaticResource FormSubtitleLabel}"/>
                     <Label Grid.Row="12" Grid.ColumnSpan="2"
-                           Text="Name of the Refuge" Style="{StaticResource DescriptionLabelStyle}" >
+                        Text="{extensions:Translate PetOwnerName}" Style="{StaticResource DescriptionLabelStyle}" >
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Name of the Refuge: " />
-                                <Span Text="{Binding Refuge.RefugeName,StringFormat='{0}'}" />
+                                <Span Text="{extensions:Translate PetOwnerName}" />
+                                <Span Text="{Binding Refuge.RefugeName,StringFormat=': {0}'}" />
 
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
                     <Label Grid.Row="13" Grid.ColumnSpan="2"
-                           Style="{StaticResource DescriptionLabelStyle}" >
+                        Style="{StaticResource DescriptionLabelStyle}" >
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Location of the Refuge: " />
-                                <Span Text="{Binding Refuge.Address}" />
+                                <Span Text="{extensions:Translate PetOwnerLocation}" />
+                                <Span Text="{Binding Refuge.Address, StringFormat=': {0}'}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>

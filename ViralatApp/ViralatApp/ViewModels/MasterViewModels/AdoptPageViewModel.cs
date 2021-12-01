@@ -22,7 +22,6 @@ namespace ViralatApp.ViewModels
         public Refuge Refuge { get; set; }
         public ObservableCollection<Questionnaire> Questions { get; set; }
         public DelegateCommand SummitCommand { get; set; }
-
         public AdoptPageViewModel(INavigationService navigationService, IPageDialogService dialogService,IApiService apiService) : base(navigationService, dialogService,apiService)
         {
             User = new UserValidator();
@@ -37,11 +36,11 @@ namespace ViralatApp.ViewModels
             {
                 new Questionnaire()
                 {
-                    Question = "Question 1",
+                    Question = "Pregunta 1",
                 },
                 new Questionnaire()
                 {
-                    Question = "Question 2",
+                    Question = "Pregunta 2",
                 },
             };
         }
