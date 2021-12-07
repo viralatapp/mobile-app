@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace ViralatApp.ViewModels
 {
-    public class AddNewCardViewModel : BaseViewModel
+    public class AddNewCardViewModel : BaseViewModel, IInitialize
     {
 
         private string _cardNumber;
@@ -40,14 +40,14 @@ namespace ViralatApp.ViewModels
             set { _cvc = value; }
         }
         public DelegateCommand AddNewCardCommand { get; set; }
-        public AddNewCardViewModel(INavigationService navigationService, IPageDialogService dialogService, IApiService apiService, ObservableCollection<CreditCard> creditCards) : base(navigationService, dialogService, apiService)
+        public AddNewCardViewModel(INavigationService navigationService, IPageDialogService dialogService, IApiService apiService) : base(navigationService, dialogService, apiService)
         {
-            _creditCards = creditCards;
+            //_creditCards = creditCards;
             AddNewCardCommand = new DelegateCommand(async () =>
             {
                 if (!String.IsNullOrEmpty(CardNumber) && !String.IsNullOrEmpty(Expiration) && !String.IsNullOrEmpty(CVC))
                 {
-                    creditCards.Add(new CreditCard(CardNumber, Expiration, CVC));
+                    _creditCards.Add(new CreditCard(CardNumber, Expiration, CVC));
                     await navigationService.GoBackAsync();
                 }
                 else
@@ -60,6 +60,14 @@ namespace ViralatApp.ViewModels
         }
 
         private ObservableCollection<CreditCard> _creditCards;
+
+        public void Initialize(INavigationParameters parameters)
+        {
+            if (parameters.TryGetValue("CreditCards", out ObservableCollection<CreditCard> creditCards))
+            {
+                _creditCards = creditCards;
+            }
+        }
     } 
 }
     

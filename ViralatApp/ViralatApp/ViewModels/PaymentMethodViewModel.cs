@@ -35,15 +35,18 @@ namespace ViralatApp.ViewModels
         public ICommand SelectedCardCommand { get; }
         public DelegateCommand GoToAddNewCardPageCommand { get; set; }
         public DelegateCommand GoToSuccessPaymentCommand { get; set; }
-        public ObservableCollection<CreditCard> CreditCards { get; } = new ObservableCollection<CreditCard>()
+        public ObservableCollection<CreditCard> CreditCards { get; set; } = new ObservableCollection<CreditCard>()
         {
-
+            
         };
         public PaymentMethodViewModel(INavigationService navigationService, IPageDialogService dialogService, IApiService apiService) : base(navigationService, dialogService, apiService)
         {
             GoToAddNewCardPageCommand = new DelegateCommand(async () =>
             {
-                await navigationService.NavigateAsync(NavigationConstants.AddNewCardPage);
+                await navigationService.NavigateAsync(NavigationConstants.AddNewCardPage, new NavigationParameters()
+                {
+                    { nameof(CreditCards), CreditCards }
+                });
             });
             GoToSuccessPaymentCommand = new DelegateCommand(async () => {
 
