@@ -62,6 +62,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\NewPetPage.xaml">
     <EmbeddedResource Update="Views\AddNewCardPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
