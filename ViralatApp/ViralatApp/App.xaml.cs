@@ -20,8 +20,7 @@ namespace ViralatApp
         {
             InitializeComponent();
 
-            //NavigationService.NavigateAsync(NavigationConstants.StartUpPage);
-            NavigationService.NavigateAsync(NavigationConstants.NewPetPage);
+            NavigationService.NavigateAsync(NavigationConstants.StartUpPage);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
