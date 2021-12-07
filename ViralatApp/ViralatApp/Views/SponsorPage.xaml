@@ -4,15 +4,34 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:ViralatApp.Controls"
-    xmlns:fastEntry="clr-namespace:XamarinFastEntrySample.FastEntry;assembly=XamarinFastEntry.Behaviors"
+    xmlns:fastEntry="clr-namespace:XamarinFastEntrySample.FastEntry;assembly=XamarinFastEntry.Behaviors"    
+    xmlns:IconFont="clr-namespace:ViralatApp.Resources.Fonts;assembly=ViralatApp"
     xmlns:local="clr-namespace:ViralatApp.Views"
     xmlns:models="clr-namespace:ViralatApp.Models">
 
     <ScrollView>
+        
         <StackLayout>
+            <ImageButton
+            Margin="5,10,0,0"
+            Padding="0"
+            BackgroundColor="{StaticResource PrimaryColor}"
+            Command="{Binding GoBackCommand}"
+            CornerRadius="20"
+            HeightRequest="30"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="StartAndExpand"
+            WidthRequest="30">
+                <ImageButton.Source>
+                    <FontImageSource
+                    FontFamily="{StaticResource MaterialIcon}"
+                    Glyph="{x:Static IconFont:IconFont.Arrow_back_ios}"
+                    Color="{DynamicResource SecondColor}" />
+                </ImageButton.Source>
+            </ImageButton>
             <local:TittleView />
             <Grid
-                Padding="10,20,10,10"
+                Padding="10,20,10,90"
                 BackgroundColor="White"
                 ColumnDefinitions="*, *, *"
                 HorizontalOptions="Center"
@@ -22,13 +41,13 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="5"
-                    Padding="5"
                     Margin="10,30,10,30"
+                    Padding="5"
+                    FontAttributes="Bold"
                     FontSize="Medium"
                     HorizontalOptions="CenterAndExpand"
-                    TextColor="Black"
-                    FontAttributes="Bold"
-                    Text="¡Apadrina a {nombre de la mascota}!" />
+                    Text="¡Apadrina a {nombre de la mascota}!"
+                    TextColor="Black" />
 
                 <Frame
                     Grid.Row="1"
@@ -62,7 +81,7 @@
                                 <fastEntry:XamarinFastEntryBehaviour
                                     IsAmount="True"
                                     Mask="$ ##### "
-                                    MaxLength="8" />
+                                    MaxLength="7" />
                             </Entry.Behaviors>
                         </Entry>
                     </StackLayout>
@@ -166,16 +185,17 @@
                     Margin="90,0,10,0"
                     Padding="10"
                     BackgroundColor="#F9543B"
+                    Command="{Binding GoToPaymentMethodPageCommand}"
                     ContentLayout="left"
                     CornerRadius="5"
                     FontFamily="RobotoRegular"
                     FontSize="Body"
                     HorizontalOptions="CenterAndExpand"
                     ImageSource="track"
-                    Command="{Binding GoToPaymentMethodPageCommand}"
                     Text="Sponsor"
                     TextColor="White" />
             </Grid>
         </StackLayout>
     </ScrollView>
+   
 </local:BasePage>
