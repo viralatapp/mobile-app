@@ -87,7 +87,7 @@ namespace ViralatApp.ViewModels
             _category = category;
 
         }
-        async Task LoadData()
+        async Task LoadData()   
         {
             PlaceMark = await _utilityService.GetCurrentPlaceLocation();
           var categories = await ApiService.GetCategories();

@@ -72,49 +72,50 @@ namespace ViralatApp.Services
 
         public async Task<List<Pet>> GetPets()
         {
-            // var response = await RemoteRequestAsync<List<Pet>>(ViralataService.Client.GetPets(await Settings.Token));
-            // if (!response.SuccessResult)
-            //     throw new Exception(response.ResponseMessage.ReasonPhrase);
-            // return response.Result;
-            //
-            return new List<Pet>
-            {
-                new Pet
-                {
-                    Name = "Linda", Image = "firstPet", Breed = "Mestizo", Age = 12, Sex = $"{EGender.Masculino}",Type = "Perros"
-                },
-                new Pet
-                {
-                    Name = "Kiko", Image = "secondPet", Breed = "Mestizo", Age = 3, Sex = $"{EGender.Masculino}",Type = "Perros"
-                },
-                new Pet { Name = "Coco", Image = "thridPet", Breed = "Mestizo", Age = 5, Sex = $"{EGender.Masculino}",Type = "Perros"},
-                new Pet { Name = "Shira", Image = "fourthPet", Breed = "Mestizo", Age = 52, Sex = $"{EGender.Femenino}",Type = "Perros"}
-            };
+            var response = await RemoteRequestAsync<PetResponse>(ViralataService.Client.GetPets(await Settings.Token));
+            if (!response.SuccessResult)
+                throw new Exception(response.ResponseMessage.ReasonPhrase);
+            return response.Result.Results;
+            
+            // return new List<Pet>
+            // {
+            //     new Pet
+            //     {
+            //         Name = "Linda", Image = "firstPet", Breed = "Mestizo", Age = 12, Sex = $"{EGender.Masculino}",Type = "Perros"
+            //     },
+            //     new Pet
+            //     {
+            //         Name = "Kiko", Image = "secondPet", Breed = "Mestizo", Age = 3, Sex = $"{EGender.Masculino}",Type = "Perros"
+            //     },
+            //     new Pet { Name = "Coco", Image = "thridPet", Breed = "Mestizo", Age = 5, Sex = $"{EGender.Masculino}",Type = "Perros"},
+            //     new Pet { Name = "Shira", Image = "fourthPet", Breed = "Mestizo", Age = 52, Sex = $"{EGender.Femenino}",Type = "Perros"}
+            // };
+        }
+
+        public async Task<Pet> CreatePet(Pet pet)
+        {
+            var response = await RemoteRequestAsync<Pet>(ViralataService.Client.GetPets(await Settings.Token));
+            if (!response.SuccessResult)
+                throw new Exception(response.ResponseMessage.ReasonPhrase);
+            return response.Result;
         }
 
         public async Task<List<Category>> GetCategories()
         {
             return new List<Category>
             {
-                new Category("Perros", "dogCategory"),
-                new Category("Gatos", "catCategory"),
-                new Category("Aves", "birdCategory") ,
-                new Category("Conejos", "rabbitCategory") 
+                new Category("dog", "dogCategory"),
+                new Category("Cat", "catCategory"),
+                new Category("Birds", "birdCategory")
             };
         }
 
         public async Task<Pet> GetPetById(string id)
         {
-            // var response = await RemoteRequestAsync<Pet>(ViralataService.Client.GetPetById(id,await Settings.Token));
-            // if (!response.SuccessResult)
-            //     throw new Exception(response.ResponseMessage.ReasonPhrase);
-            // return response.Result;
-            return new Pet
-            {
-                Name = "Shira", Image = "fourthPet", Breed = "Mestizo", Age = 52, Sex = $"{EGender.Femenino}",
-                Type = "Perros",Weight = 33,Description = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas Letraset, las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum."
-                ,Address = "Santo Domingo, Republica Dominicana"
-            };
+            var response = await RemoteRequestAsync<Pet>(ViralataService.Client.GetPetById(id,await Settings.Token));
+            if (!response.SuccessResult)
+                throw new Exception(response.ResponseMessage.ReasonPhrase);
+            return response.Result;
         }
 
         public async Task<List<Adoption>> GetAdoptions()

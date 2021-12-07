@@ -11,7 +11,7 @@ namespace ViralatApp.Helpers
         public static Task<string> Token 
         {
             get=>SecureStorage.GetAsync(nameof(Token));
-            set=>SecureStorage.SetAsync(nameof(Token),value.Result);
+            set=>SecureStorage.SetAsync(nameof(Token),$"bearer {value.Result}" );
         }
         public static string User 
         {

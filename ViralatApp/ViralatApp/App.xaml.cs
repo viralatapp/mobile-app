@@ -20,6 +20,7 @@ namespace ViralatApp
         {
             InitializeComponent();
 
+            
             NavigationService.NavigateAsync(NavigationConstants.StartUpPage);
         }
 
@@ -36,12 +37,14 @@ namespace ViralatApp
             containerRegistry.RegisterForNavigation<StartUpPage, StartUpPageViewModel>();
             containerRegistry.RegisterForNavigation<AdoptPage, AdoptPageViewModel>();
             containerRegistry.RegisterForNavigation<SponsorPage, SponsorPageViewModel>();
+            containerRegistry.RegisterForNavigation<AddNewCardPage, AddNewCardViewModel>();
+            containerRegistry.RegisterForNavigation<PaymentMethodPage, PaymentMethodViewModel>();
             containerRegistry.RegisterForNavigation<UserDetailPage, UserDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<RefugeDetailPage, RefugeDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<SearchPage, SearchPageViewModel>();
             containerRegistry.RegisterForNavigation<NewPetPage, NewPetViewModel>();
             containerRegistry.RegisterInstance<IApiClient<IViralataApi>>(new ApiClient<IViralataApi>(Config.ApiUrl));
-
+            containerRegistry.RegisterForNavigation<RegisterPetPage, RegisterPetPageViewModel>();
             #region Register ViewModel For TabView
             containerRegistry.Register(typeof(HomeViewModel));
             containerRegistry.Register(typeof(FavoriteViewModel));
