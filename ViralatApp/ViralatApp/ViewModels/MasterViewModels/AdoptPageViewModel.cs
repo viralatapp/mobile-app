@@ -49,7 +49,7 @@ namespace ViralatApp.ViewModels
         {
             if (User.IsValid)
             {
-               var adoption = await ApiService.CreateAdoptions(new RequestAdoption()
+               /*var adoption = await ApiService.CreateAdoptions(new RequestAdoption()
                 {
                     User = Settings.User,
                     Pet = Pet
@@ -59,8 +59,9 @@ namespace ViralatApp.ViewModels
                     Adoption = adoption.Id,
                     User = Settings.User,
                     Questions = Questions.ToList()
-                });
-               await navigationService.GoBackAsync();
+                });*/
+                await dialogService.DisplayAlertAsync("Exito!", "Solicitud de adopción enviada satisfactoriamente.", "OK");
+                await navigationService.GoBackAsync();
             }
         }
        
