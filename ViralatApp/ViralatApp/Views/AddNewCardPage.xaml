@@ -136,6 +136,7 @@
                         Margin="20,0,20,0"
                         Padding="10"
                         BackgroundColor="#F9543B"
+                        Command="{Binding AddNewCardCommand}"
                         ContentLayout="left"
                         CornerRadius="5"
                         FontFamily="RobotoRegular"

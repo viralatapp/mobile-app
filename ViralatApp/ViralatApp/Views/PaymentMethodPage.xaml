@@ -3,56 +3,11 @@
     x:Class="ViralatApp.Views.PaymentMethodPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:ViralatApp.Views"    
-    xmlns:IconFont="clr-namespace:ViralatApp.Resources.Fonts;assembly=ViralatApp">
-    <Grid>
-    <ScrollView>
-        <StackLayout>
-            <local:TittleView />
-            <Grid
-                Padding="10,20,10,10"
-                BackgroundColor="Transparent"
-                ColumnDefinitions="*, *, *"
-                RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto">
-
-
-                <Button
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Grid.ColumnSpan="4"
-                    Margin="20,15,100,0"
-                    Padding="10"
-                    BackgroundColor="White"
-                    Command="{Binding GoToAddNewCardPageCommand}"
-                    ContentLayout="left"
-                    CornerRadius="10"
-                    FontFamily="RobotoRegular"
-                    FontSize="Body"
-                    HorizontalOptions="CenterAndExpand"
-                    ImageSource="addCard"
-                    Text="Add New Card"
-                    TextColor="#431515" />
-
-                <Button
-                    Grid.Row="10"
-                    Grid.Column="1"
-                    Grid.ColumnSpan="4"
-                    Margin="20,15,100,0"
-                    Padding="10"
-                    BackgroundColor="#F9543B"
-                    ContentLayout="left"
-                    CornerRadius="10"
-                    FontFamily="RobotoRegular"
-                    FontSize="Body"
-                    HorizontalOptions="CenterAndExpand"
-                    ImageSource="track"
-                    Text="Sponsor"
-                    TextColor="White" />
-            </Grid>
-        </StackLayout>
-    </ScrollView>
+    xmlns:IconFont="clr-namespace:ViralatApp.Resources.Fonts;assembly=ViralatApp"
+    xmlns:local="clr-namespace:ViralatApp.Views">
+    <StackLayout>
         <ImageButton
-            Margin="10"
+            Margin="0,5,0,0"
             Padding="10,5,5,5"
             BackgroundColor="{StaticResource PrimaryColor}"
             Command="{Binding GoBackCommand}"
@@ -62,12 +17,88 @@
             VerticalOptions="StartAndExpand"
             WidthRequest="40">
             <ImageButton.Source>
-
                 <FontImageSource
                     FontFamily="{StaticResource MaterialIcon}"
                     Glyph="{x:Static IconFont:IconFont.Arrow_back_ios}"
                     Color="{DynamicResource SecondColor}" />
             </ImageButton.Source>
         </ImageButton>
-    </Grid>
+        <local:TittleView />       
+
+        <CollectionView
+            ItemsSource="{Binding CreditCards}"
+            SelectedItem="{Binding SelectedCard}"
+            SelectionMode="Single">
+
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate>
+                    <SwipeView>
+
+                    <Frame Padding="0" BorderColor="LightGray">
+
+                        <Grid
+                            Padding="10"
+                            ColumnDefinitions="Auto,Auto, Auto"
+                            RowDefinitions="Auto, Auto, Auto"
+                            RowSpacing="0">                            
+
+                            <Label
+                                Grid.Row="5"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="Subtitle"
+                                Text="{Binding CardNumber}"
+                                TextColor="Black" />
+
+                            <Label
+                                Grid.Row="6"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="Caption"
+                                Text="{Binding Expiration}"
+                                TextColor="Black" />
+
+                            <Label
+                                Grid.Row="6"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="3"
+                                FontSize="Body"
+                                Text="{Binding CVC}" />
+                        </Grid>
+                    </Frame>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button
+            Margin="20,50,20,0"
+            Padding="10"
+            BackgroundColor="White"
+            Command="{Binding GoToAddNewCardPageCommand}"
+            ContentLayout="left"
+            CornerRadius="10"
+            FontFamily="RobotoRegular"
+            FontSize="Body"
+            HorizontalOptions="CenterAndExpand"
+            ImageSource="addCard"
+            Text="Add New Card"
+            TextColor="#431515" />
+        <Button
+            Margin="20,15,10,150"
+            Padding="10"
+            BackgroundColor="#F9543B"
+            ContentLayout="left"
+            CornerRadius="10"
+            FontFamily="RobotoRegular"
+            FontSize="Body"
+            Command="{Binding GoToSuccessPaymentCommand}"
+            HorizontalOptions="CenterAndExpand"
+            ImageSource="track"
+            Text="Sponsor"
+            TextColor="White" />
+
+
+    </StackLayout>
+
 </local:BasePage>
