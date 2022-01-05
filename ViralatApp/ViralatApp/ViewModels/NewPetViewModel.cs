@@ -46,8 +46,8 @@ namespace ViralatApp.ViewModels
                 newPet.Address = Address;
                 */
 
-                newPet.User = "619c4486e22783001e88548a";
-                newPet.Name = "Firulais 2";
+                newPet.User = Settings.UserId;//"619c4486e22783001e88548a";
+                newPet.Name = "Fido Dido";
                 newPet.Age = 3;
                 newPet.Weight = 80;
                 newPet.Description = "Perrito jugueton";
@@ -58,7 +58,7 @@ namespace ViralatApp.ViewModels
                 newPet.Images = new List<string> { "https://i.imgur.com/UD3r8ET.jpeg" };
 
 
-                apiService.CreatePet(newPet);
+                ApiService.CreatePet(newPet);
 
             });
         }

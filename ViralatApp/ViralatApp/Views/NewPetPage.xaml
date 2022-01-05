@@ -112,7 +112,7 @@
                     TextColor="White"
                     CornerRadius="5"
                     Margin="0,30,0,15"
-                    Padding="18"/>
+                    Padding="18" Command="{Binding CreatePetCommand}"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
