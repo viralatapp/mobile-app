@@ -54,8 +54,10 @@ namespace ViralatApp.Services
             var response = await RemoteRequestAsync<User>(ViralataService.Client.GetUserById(id,await Settings.Token));
             if (!response.SuccessResult)
                 throw new Exception(response.ResponseMessage.ReasonPhrase);
-            //Reemplaza la data que sabemos que está vacía con información de ejemplo. Si el objeto estuviera completo, entonces solo sería: return response.Result;
-            return new User()
+            return response.Result;
+
+            //Reemplaza la data que sabemos que está vacía con información de ejemplo. 
+            /*return new User()
             {
                 Name = response.Result.Name,
                 Description = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original",
@@ -71,8 +73,7 @@ namespace ViralatApp.Services
                 City= response.Result.City,
                 Country=response.Result.Country,
                 Phone="809-568-2222"
-            };
-            //return response.Result;
+            };*/
             /*return new User()
             {
                 Name ="Juan Pérez González" ,
