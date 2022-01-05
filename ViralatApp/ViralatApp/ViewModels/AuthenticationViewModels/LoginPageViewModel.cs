@@ -41,6 +41,7 @@ namespace ViralatApp.ViewModels
                 Settings.Email = Email;
                 Settings.Password = Password;
                 Settings.User = token.User.Name;
+                Settings.UserId = token.User.Id;
                 await navigationService.NavigateAsync(NavigationConstants.MenuPage);
             }
         }

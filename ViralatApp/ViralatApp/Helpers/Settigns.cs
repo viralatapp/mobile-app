@@ -38,5 +38,10 @@ namespace ViralatApp.Helpers
             get=> Preferences.Get(nameof(ShowGettingStarted),true);
             set=>Preferences.Set(nameof(ShowGettingStarted),value);
         }
+        public static string UserId
+        {
+            get => Preferences.Get(nameof(UserId), string.Empty);
+            set => Preferences.Set(nameof(UserId), value);
+        }
     }
 }

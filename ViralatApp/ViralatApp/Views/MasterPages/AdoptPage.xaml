@@ -22,7 +22,6 @@
                          HeightRequest="40"
                          WidthRequest="40"
                          Margin="10"
-                         CornerRadius="20"
                          VerticalOptions="StartAndExpand"
                          Command="{Binding GoBackCommand}"
                          HorizontalOptions="StartAndExpand">
@@ -42,22 +41,22 @@
                    FontSize="Title"
                    TextColor="Black"
             />
-            <Frame Padding="5,5"
+            <!--Frame Padding="5,5"
                    Grid.Row="1"
                    Margin="5,2"
                    CornerRadius="15"
                    Grid.ColumnSpan="2"
                    HasShadow="False"
-                   BackgroundColor="White">
-            <ScrollView >
+                   BackgroundColor="White"-->
+            <ScrollView Grid.ColumnSpan="2" Margin="5,2" 
+                        Grid.Row="1" Padding="5,5" BackgroundColor="White">
                 <Grid ColumnDefinitions="*, *"
                       RowDefinitions="
                       Auto, Auto, Auto, Auto, Auto, 
                       Auto, Auto, Auto, Auto, Auto, 
-                      Auto, Auto, Auto, Auto, Auto, 
-                     Auto"
+                      Auto, Auto, Auto, Auto, Auto"
                       RowSpacing="10"
-                      Padding="15,20,15,10" >
+                      Padding="15,20,15,10">
                     
                     <!-- Section: Pet Information -->
                     
@@ -111,32 +110,17 @@
                     </Label>
 
                     <!-- Section: Applicant Information -->
-                    <Label Grid.Row="5" Grid.ColumnSpan="2"
+                        <Label Grid.Row="5" Grid.ColumnSpan="2"
                         Text="{extensions:Translate ApplicantInformation}" Style="{StaticResource FormSubtitleLabel}"/>
-                    <Label Grid.Row="6" Grid.ColumnSpan="2"
-                           Text="{extensions:Translate TapHereCurrentUserISTheApplicant}" Padding="40,5,0,0" />
-                    <CheckBox Grid.Row="6" />
 
-                    <!-- REPLACE THIS WITH WHOLE CUSTOM ENTRY -->
-                    <Frame Grid.Row="7" Grid.Column="0" Style="{StaticResource CustomEntryFrameStyle}">
-                        <Frame.CornerRadius>
-                            <OnPlatform x:TypeArguments="x:Single">
-                                <On Platform="iOS">10</On>
-                                <On Platform="Android">5</On>
-                            </OnPlatform>
-                        </Frame.CornerRadius>
+                        <!-- REPLACE THIS WITH WHOLE CUSTOM ENTRY -->
+                    <Frame Grid.Row="6" Grid.ColumnSpan="2" Style="{StaticResource CustomEntryFrameStyle}">
                         <StackLayout Orientation="Horizontal" Padding="5,0">
-                            <controls:CustomEntry Text="{Binding User.FirstName.Value}" Placeholder="{extensions:Translate FirstName}"
+                            <controls:CustomEntry Text="{Binding User.Name.Value}" Placeholder="{extensions:Translate FullName}"
                                                   Style="{StaticResource CustomEntryStyle}" />
                         </StackLayout>
                     </Frame>
-                    <Frame Grid.Row="7" Grid.Column="1" Style="{StaticResource CustomEntryFrameStyle}">
-                        <StackLayout Orientation="Horizontal" Padding="5,0">
-                            <controls:CustomEntry Text="{Binding User.LastName.Value}" Placeholder="{extensions:Translate LastName}"
-                                                  Style="{StaticResource CustomEntryStyle}" />
-                        </StackLayout>
-                    </Frame>
-                        <Label Grid.Row="8" Grid.Column="0"
+                    <Label Grid.Row="7" Grid.Column="0"
                         Style="{StaticResource DescriptionLabelStyle}" VerticalOptions="Center" HorizontalOptions="End">
                             <Label.FormattedText>
                                 <FormattedString>
@@ -144,12 +128,12 @@
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                    <Frame Grid.Row="8" Grid.Column="1" Style="{StaticResource CustomEntryFrameStyle}">
+                    <Frame Grid.Row="7" Grid.Column="1" Style="{StaticResource CustomEntryFrameStyle}">
                             <StackLayout Orientation="Horizontal" Padding="5,0">
                                 <DatePicker Date="{Binding User.DateBirth}" Style="{StaticResource CustomEntryStyle}" />
                             </StackLayout>
                         </Frame>
-                    <Frame Grid.Row="9" Grid.ColumnSpan="2" Style="{StaticResource CustomEntryFrameStyle}">
+                    <Frame Grid.Row="8" Grid.ColumnSpan="2" Style="{StaticResource CustomEntryFrameStyle}">
                         <Frame.CornerRadius>
                             <OnPlatform x:TypeArguments="x:Single">
                                 <On Platform="iOS">10</On>
@@ -161,7 +145,7 @@
                                                   Style="{StaticResource CustomEntryStyle}" />
                         </StackLayout>
                     </Frame>
-                    <Frame Grid.Row="10" Grid.Column="0" Style="{StaticResource CustomEntryFrameStyle}">
+                    <Frame Grid.Row="9" Grid.Column="0" Style="{StaticResource CustomEntryFrameStyle}">
                         <Frame.CornerRadius>
                             <OnPlatform x:TypeArguments="x:Single">
                                 <On Platform="iOS">10</On>
@@ -172,7 +156,7 @@
                             <controls:CustomEntry Text="{Binding User.City}" Placeholder="{extensions:Translate City}" Style="{StaticResource CustomEntryStyle}" />
                         </StackLayout>
                     </Frame>
-                    <Frame Grid.Row="10" Grid.Column="1" Style="{StaticResource CustomEntryFrameStyle}">
+                    <Frame Grid.Row="9" Grid.Column="1" Style="{StaticResource CustomEntryFrameStyle}">
                         <Frame.CornerRadius>
                             <OnPlatform x:TypeArguments="x:Single">
                                 <On Platform="iOS">10</On>
@@ -186,9 +170,9 @@
                     </Frame>
 
                     <!-- Section: Refuge / Owner Information -->
-                    <Label Grid.Row="11" Grid.ColumnSpan="2" 
+                    <Label Grid.Row="10" Grid.ColumnSpan="2" 
                     Text="{extensions:Translate PetOwnerAssessment}" Style="{StaticResource FormSubtitleLabel}"/>
-                    <Label Grid.Row="12" Grid.ColumnSpan="2"
+                    <Label Grid.Row="11" Grid.ColumnSpan="2"
                         Text="{extensions:Translate PetOwnerName}" Style="{StaticResource DescriptionLabelStyle}" >
                         <Label.FormattedText>
                             <FormattedString>
@@ -198,7 +182,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label Grid.Row="13" Grid.ColumnSpan="2"
+                    <Label Grid.Row="12" Grid.ColumnSpan="2"
                         Style="{StaticResource DescriptionLabelStyle}" >
                         <Label.FormattedText>
                             <FormattedString>
@@ -208,7 +192,7 @@
                         </Label.FormattedText>
                     </Label>
                     <StackLayout BindableLayout.ItemsSource="{Binding Questions}"
-                                 Grid.Row="14" >
+                                 Grid.Row="13" >
                         <BindableLayout.ItemTemplate>
                             <DataTemplate x:DataType="models:Questionnaire">
                                 <StackLayout>
@@ -226,7 +210,7 @@
                     </StackLayout>
 
                     <Button 
-                        Grid.Row="15"
+                        Grid.Row="14"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
                         Text="{extensions:Translate Submit}"
@@ -244,7 +228,7 @@
                     </Button>
                 </Grid>
             </ScrollView>
-            </Frame>
+            <!--/Frame-->
         </Grid>
         
     </views:BasePage.Content>

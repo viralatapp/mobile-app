@@ -208,7 +208,7 @@
     <value>País</value>
   </data>
   <data name="DateOfBirth" xml:space="preserve">
-    <value>Fecha de Nac.</value>
+    <value>Fecha de Nacimiento</value>
   </data>
   <data name="PetInformation" xml:space="preserve">
     <value>Información de la mascota</value>
@@ -221,5 +221,8 @@
   </data>
   <data name="PetOwnerName" xml:space="preserve">
     <value>Dueño de la Mascota</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Nombre Completo</value>
   </data>
 </root>

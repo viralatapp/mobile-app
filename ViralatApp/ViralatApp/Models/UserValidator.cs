@@ -12,7 +12,7 @@ namespace ViralatApp.Models
         public ValidatableObject<string> Address { get; set; }
         public ValidatableObject<string> City { get; set; }
         public ValidatableObject<string> Country { get; set; }
-        public DateTime DateBirth { get; set; }=DateTime.Today;
+        public DateTime DateBirth { get; set; }=DateTime.Today.AddYears(-5).AddDays(-25);
 
         public UserValidator()
         {

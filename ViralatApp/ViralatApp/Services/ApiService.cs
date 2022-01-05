@@ -51,11 +51,24 @@ namespace ViralatApp.Services
 
         public async Task<User> GetUserById(string id)
         {
-            // var response = await RemoteRequestAsync<User>(ViralataService.Client.GetUserById(id,await Settings.Token));
-            // if (!response.SuccessResult)
-            //     throw new Exception(response.ResponseMessage.ReasonPhrase);
-            // return response.Result;
+            var response = await RemoteRequestAsync<User>(ViralataService.Client.GetUserById(id,await Settings.Token));
+            if (!response.SuccessResult)
+                throw new Exception(response.ResponseMessage.ReasonPhrase);
+            //Reemplaza la data que sabemos que está vacía con información de ejemplo. Si el objeto estuviera completo, entonces solo sería: return response.Result;
             return new User()
+            {
+                Name = response.Result.Name,
+                Description = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original",
+                Email = response.Result.Email,
+                AdoptionHistory = new List<string>()
+                {
+                    "Ha adoptado a una perrita de 5 meses llamada Diana el día 25/09/2021.",
+                    "Ha apadrinado a Spy, un cachorro de 3 meses.",
+                    "Ha adoptado a un gato con  2 semanas de nacido."
+                }
+            };
+            //return response.Result;
+            /*return new User()
             {
                 Name ="Juan Pérez González" ,
                 Description = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original",
@@ -66,7 +79,7 @@ namespace ViralatApp.Services
                     "Ha apadrinado a Spy, un cachorro de 3 meses.",
                     "Ha adoptado a un gato con  2 semanas de nacido."
                 }
-            };
+            };*/
 
         }
 

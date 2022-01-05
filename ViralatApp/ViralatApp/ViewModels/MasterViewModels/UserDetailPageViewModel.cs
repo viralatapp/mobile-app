@@ -39,7 +39,7 @@ namespace ViralatApp.ViewModels
 
         async Task LoadDetails()
         {
-            User = await ApiService.GetUserById(Settings.User);
+            User = await ApiService.GetUserById(Settings.UserId);
         }
 
         public async Task InitializeAsync(INavigationParameters parameters)

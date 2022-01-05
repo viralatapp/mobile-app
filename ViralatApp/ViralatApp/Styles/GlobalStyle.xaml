@@ -15,10 +15,15 @@
     <x:String x:Key="LetterRegular">RobotoRegular</x:String>
     <x:String x:Key="LetterMedium">RobotoMedium</x:String>
     <x:String x:Key="MaterialIcon">materialdesignicons</x:String>
+    
     <Style x:Key="FormSubtitleLabel"
            TargetType="Label">
+        <Setter Property="BackgroundColor" Value="{DynamicResource SecondColor}"/>
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}"/>
         <Setter Property="HorizontalTextAlignment" Value="Center"/>
-        <Setter Property="Margin" Value="10"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Padding" Value="10"/>
+        <!--Setter Property="Margin" Value="10"/-->
         <Setter Property="FontSize" Value="Large"></Setter>
     </Style>
     <Style x:Key="LabelRegular"
