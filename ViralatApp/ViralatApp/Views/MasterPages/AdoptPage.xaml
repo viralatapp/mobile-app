@@ -173,7 +173,7 @@
                     <Label Grid.Row="10" Grid.ColumnSpan="2" 
                     Text="{extensions:Translate PetOwnerAssessment}" Style="{StaticResource FormSubtitleLabel}"/>
                     <Label Grid.Row="11" Grid.ColumnSpan="2"
-                        Text="{extensions:Translate PetOwnerName}" Style="{StaticResource DescriptionLabelStyle}" >
+                        Text="{extensions:Translate PetOwnerName}" Style="{StaticResource DescriptionLabelStyle}">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="{extensions:Translate PetOwnerName}" />
@@ -192,7 +192,7 @@
                         </Label.FormattedText>
                     </Label>
                     <StackLayout BindableLayout.ItemsSource="{Binding Questions}"
-                                 Grid.Row="13" >
+                                 Grid.Row="13" Grid.ColumnSpan="2" >
                         <BindableLayout.ItemTemplate>
                             <DataTemplate x:DataType="models:Questionnaire">
                                 <StackLayout>

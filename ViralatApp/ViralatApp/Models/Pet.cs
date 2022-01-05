@@ -77,8 +77,9 @@ namespace ViralatApp.Models
 
     public class RequestAdoption
     {
+        public bool Active { get; set; } 
         public string User { get; set; }
-        public Pet Pet { get; set; }
+        public string Pet { get; set; }
     }
 
     public class ApplicationAdopt

@@ -38,11 +38,11 @@ namespace ViralatApp.ViewModels
             {
                 new Questionnaire()
                 {
-                    Question = "Pregunta 1",
+                    Question = "¿Dónde viviría la mascota?",
                 },
                 new Questionnaire()
                 {
-                    Question = "Pregunta 2",
+                    Question = "¿Se compromete a darle el cuidado requerido?",
                 },
             };
         }
@@ -51,17 +51,18 @@ namespace ViralatApp.ViewModels
         {
             if (User.IsValid)
             {
-               /*var adoption = await ApiService.CreateAdoptions(new RequestAdoption()
+                var adoption = await ApiService.CreateAdoptions(new RequestAdoption()
                 {
-                    User = Settings.User,
-                    Pet = Pet
+                    Active = true,
+                    User = Settings.UserId,
+                    Pet = Pet.Id
                 });
                 await ApiService.CreateApplication(new ApplicationAdopt()
                 {
                     Adoption = adoption.Id,
-                    User = Settings.User,
+                    User = Settings.UserId,
                     Questions = Questions.ToList()
-                });*/
+                });
                 await dialogService.DisplayAlertAsync("Exito!", "Solicitud de adopción enviada satisfactoriamente.", "OK");
                 await navigationService.GoBackAsync();
             }
@@ -79,10 +80,8 @@ namespace ViralatApp.ViewModels
                 Pet = parameters[nameof(Pet)] as Pet;
             }
             CurrentUser = await ApiService.GetUserById(Settings.UserId);
-            /*CurrentUser = new User()
-            {
-
-            };*/
+            PetOwner = CurrentUser;
+            //PetOwner real data disabled because of unknown error.
             //PetOwner = await ApiService.GetUserById(Pet.User);
 
             LoadData();
