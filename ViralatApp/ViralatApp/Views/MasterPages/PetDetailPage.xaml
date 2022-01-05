@@ -14,7 +14,7 @@
             RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto,Auto"
             >
 
-            <Frame
+                <Frame
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 Grid.Row="0"
@@ -22,8 +22,7 @@
                 Margin="-40"
                 Padding="0"
                 >
-
-                <Image 
+                    <Image 
                     Source="{Binding Pet.Image}" 
                     Aspect="AspectFill"
                     WidthRequest="250"
@@ -41,7 +40,7 @@
                         Style="{StaticResource LabelRegular}"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
-                        Text="{extension:Translate  Age}"/>
+                        Text="{extension:Translate Age}"/>
 
                     <Label 
                         VerticalOptions="Center"
@@ -95,7 +94,7 @@
             <Label Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0" Margin="10,5">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span FontSize="Body" FontFamily="RobotoBold" Text="{extension:Translate Name,StringFormat='{0}:'}"  Style="{StaticResource LabelRegular}"/>
+                        <Span Text="{extension:Translate Name,StringFormat='{0}:'}"  Style="{StaticResource LabelRegular}"/>
                         <Span Text="{Binding Pet.Name,StringFormat=' {0}'}" Style="{StaticResource LabelMedium}"/>
                     </FormattedString>
                 </Label.FormattedText>
@@ -105,7 +104,7 @@
                    >
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span  Text="{extension:Translate Breed,StringFormat='{0}:'}" Style="{StaticResource LabelRegular}" />
+                        <Span Text="{extension:Translate Breed,StringFormat='{0}:'}" Style="{StaticResource LabelRegular}" />
                         <Span Text="{Binding Pet.Breed,StringFormat=' {0}'}" Style="{StaticResource LabelMedium}"/>
                     </FormattedString>
                 </Label.FormattedText>
@@ -120,8 +119,10 @@
                 Margin="10,0"
                 Source="placeholder" />
             <Label Text="{Binding Pet.Address}"
-                   Grid.Column="1"
-                   Grid.ColumnSpan="2"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   HorizontalOptions="Start"
+                   Margin="40,0"
                    Style="{StaticResource LabelMedium}"
                    Grid.Row="3"/>
 
