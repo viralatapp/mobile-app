@@ -90,8 +90,8 @@
                 </Frame.CornerRadius>
                 <StackLayout Padding="5,0">
                     <Label Text="Gender" TextColor="Black" FontFamily="RobotoRegular" FontAttributes="None" FontSize="Medium"/>
-                    <RadioButton Content="Male" IsChecked="True"/>
-                    <RadioButton Content="Female"/>
+                    <RadioButton Content="Male" IsChecked="{Binding IsMale}"/>
+                    <RadioButton Content="Female" IsChecked="{Binding IsFemale}"/>
                 </StackLayout>
             </Frame>
             <Frame BackgroundColor="Transparent" Margin="0,0,0,10" HasShadow="False" BorderColor="#dfe4e9" Padding="3" HorizontalOptions="FillAndExpand">
@@ -109,6 +109,7 @@
                     FontFamily="RobotoRegular"
                     FontSize="Body"
                     BackgroundColor="#F9543B"
+                    Command="{Binding CreatePetCommand}"
                     TextColor="White"
                     CornerRadius="5"
                     Margin="0,30,0,15"

@@ -5,7 +5,7 @@ namespace ViralatApp.Helpers
     public static class NavigationConstants
     {
         public const string StartUpPage= "StartUpPage";
-        public const string LoginPage = "LoginPage";
+        public const string LoginPage = "/LoginPage";
         public const string MenuPage = "/MenuPage";
         public const string SignUpPage = "/SignUpPage";
         public const string WelcomePage = "WelcomePage";

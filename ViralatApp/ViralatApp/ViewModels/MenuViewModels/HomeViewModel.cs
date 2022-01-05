@@ -36,10 +36,7 @@ namespace ViralatApp.ViewModels
         {
             _utilityService = utilityService;
             
-            GoToUserDetailsPageCommand = new DelegateCommand(async () =>
-            {
-                await navigationService.NavigateAsync(NavigationConstants.UserDetailPage);
-            });
+            GoToUserDetailsPageCommand = new DelegateCommand(async () => await ShowActionSheet());
 
             GoToDetailPageCommand = new DelegateCommand<Pet>(async (param) => await NavigateToDetailPet(param));
 
@@ -48,6 +45,33 @@ namespace ViralatApp.ViewModels
             MarkFavoriteCommand = new DelegateCommand<Pet>(async (param)=>await MarkFavorite(param));
             NavigateToSearchPageCommand = new DelegateCommand(async () =>await  NavigateToSearchPet());
             LoadDataCommand.Execute();
+        }
+
+       async Task ShowActionSheet()
+        {
+            var options = new string[]
+            {
+                "Ir al perfil",
+                "Crear mascota",
+                "Cerrar sesion"
+            
+            };
+           var option = await dialogService.DisplayActionSheetAsync("Seleccionar una accion","Cancel",null,options);
+           switch (option)
+           {
+               case "Ir al perfil":
+                   await navigationService.NavigateAsync(NavigationConstants.UserDetailPage);
+                   break;
+               case "Crear mascota":
+                   await navigationService.NavigateAsync(NavigationConstants.NewPetPage);
+                   break;
+               case "Cerrar sesion":
+                   Settings.User = string.Empty;
+                   Settings.Email = string.Empty;
+                   Settings.Password = string.Empty;
+                   await navigationService.NavigateAsync(NavigationConstants.LoginPage);
+                   break;
+           }
         }
         async  Task NavigateToSearchPet()
         {

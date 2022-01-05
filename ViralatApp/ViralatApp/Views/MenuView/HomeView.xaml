@@ -41,14 +41,20 @@
                     <Image Source="cross"/>
                 </StackLayout>
             </Frame>
-            <ImageButton Source="profile"
+            <ImageButton 
                          HeightRequest="40" 
                          WidthRequest="40"
                          CornerRadius="20"
                          Grid.Column="1"
                          HorizontalOptions="End" 
                          VerticalOptions="Start" 
-                         BackgroundColor="Transparent" Command="{Binding GoToUserDetailsPageCommand}"/>
+                         BackgroundColor="Transparent" Command="{Binding GoToUserDetailsPageCommand}">
+                <ImageButton.Source>
+                    <FontImageSource Glyph="{x:Static IconFont:IconFont.More_vert}"
+                                     FontFamily="{StaticResource MaterialIcon}"
+                                     Color="{StaticResource SecondColor}"/>
+                </ImageButton.Source>
+            </ImageButton>
             <Frame CornerRadius="15" BorderColor="{DynamicResource PrimaryLightColor}" 
                    HasShadow='False' Padding="10,0"
                    Grid.Row="1">
