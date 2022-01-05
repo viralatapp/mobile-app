@@ -42,6 +42,10 @@ namespace ViralatApp.ViewModels
                 Settings.Password = Password;
                 Settings.User = token.User.Name;
                 Settings.UserId = token.User.Id;
+                Settings.Address = token.User.Address;
+                Settings.City = token.User.City;
+                Settings.Country = token.User.Country;
+                Settings.BirthDate = token.User.BirthDate;
                 await navigationService.NavigateAsync(NavigationConstants.MenuPage);
             }
         }

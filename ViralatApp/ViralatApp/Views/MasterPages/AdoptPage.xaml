@@ -116,7 +116,7 @@
                         <!-- REPLACE THIS WITH WHOLE CUSTOM ENTRY -->
                     <Frame Grid.Row="6" Grid.ColumnSpan="2" Style="{StaticResource CustomEntryFrameStyle}">
                         <StackLayout Orientation="Horizontal" Padding="5,0">
-                            <controls:CustomEntry Text="{Binding User.Name.Value}" Placeholder="{extensions:Translate FullName}"
+                            <controls:CustomEntry Text="{Binding CurrentUser.Name}" Placeholder="{extensions:Translate FullName}"
                                                   Style="{StaticResource CustomEntryStyle}" />
                         </StackLayout>
                     </Frame>
@@ -130,7 +130,7 @@
                         </Label>
                     <Frame Grid.Row="7" Grid.Column="1" Style="{StaticResource CustomEntryFrameStyle}">
                             <StackLayout Orientation="Horizontal" Padding="5,0">
-                                <DatePicker Date="{Binding User.DateBirth}" Style="{StaticResource CustomEntryStyle}" />
+                            <DatePicker Date="{Binding CurrentUser.BirthDate}" Style="{StaticResource CustomEntryStyle}" />
                             </StackLayout>
                         </Frame>
                     <Frame Grid.Row="8" Grid.ColumnSpan="2" Style="{StaticResource CustomEntryFrameStyle}">
@@ -141,7 +141,7 @@
                             </OnPlatform>
                         </Frame.CornerRadius>
                         <StackLayout Orientation="Horizontal" Padding="5,0">
-                            <controls:CustomEntry Text="{Binding User.Address}" Placeholder="{extensions:Translate Address}"
+                            <controls:CustomEntry Text="{Binding CurrentUser.Address}" Placeholder="{extensions:Translate Address}"
                                                   Style="{StaticResource CustomEntryStyle}" />
                         </StackLayout>
                     </Frame>
@@ -153,7 +153,7 @@
                             </OnPlatform>
                         </Frame.CornerRadius>
                         <StackLayout Orientation="Horizontal" Padding="5,0">
-                            <controls:CustomEntry Text="{Binding User.City}" Placeholder="{extensions:Translate City}" Style="{StaticResource CustomEntryStyle}" />
+                            <controls:CustomEntry Text="{Binding CurrentUser.City}" Placeholder="{extensions:Translate City}" Style="{StaticResource CustomEntryStyle}" />
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Row="9" Grid.Column="1" Style="{StaticResource CustomEntryFrameStyle}">
@@ -164,7 +164,7 @@
                             </OnPlatform>
                         </Frame.CornerRadius>
                         <StackLayout Orientation="Horizontal" Padding="5,0">
-                            <controls:CustomEntry Text="{Binding User.Country}" Placeholder="{extensions:Translate Country}"
+                            <controls:CustomEntry Text="{Binding CurrentUser.Country}" Placeholder="{extensions:Translate Country}"
                                                   Style="{StaticResource CustomEntryStyle}" />
                         </StackLayout>
                     </Frame>
@@ -177,7 +177,7 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="{extensions:Translate PetOwnerName}" />
-                                <Span Text="{Binding Refuge.RefugeName,StringFormat=': {0}'}" />
+                                <Span Text="{Binding PetOwner.Name,StringFormat=': {0}'}" />
 
                             </FormattedString>
                         </Label.FormattedText>
@@ -187,7 +187,7 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="{extensions:Translate PetOwnerLocation}" />
-                                <Span Text="{Binding Refuge.Address, StringFormat=': {0}'}" />
+                                <Span Text="{Binding PetOwner.Address, StringFormat=': {0}'}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>

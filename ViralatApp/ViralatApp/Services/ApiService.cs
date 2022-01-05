@@ -65,7 +65,12 @@ namespace ViralatApp.Services
                     "Ha adoptado a una perrita de 5 meses llamada Diana el día 25/09/2021.",
                     "Ha apadrinado a Spy, un cachorro de 3 meses.",
                     "Ha adoptado a un gato con  2 semanas de nacido."
-                }
+                },
+                BirthDate = response.Result.BirthDate,
+                Address = response.Result.Address,
+                City= response.Result.City,
+                Country=response.Result.Country,
+                Phone="809-568-2222"
             };
             //return response.Result;
             /*return new User()

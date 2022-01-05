@@ -43,5 +43,25 @@ namespace ViralatApp.Helpers
             get => Preferences.Get(nameof(UserId), string.Empty);
             set => Preferences.Set(nameof(UserId), value);
         }
+        public static string Address
+        {
+            get => Preferences.Get(nameof(Address), string.Empty);
+            set => Preferences.Set(nameof(Address), value);
+        }
+        public static string City
+        {
+            get => Preferences.Get(nameof(City), string.Empty);
+            set => Preferences.Set(nameof(City), value);
+        }
+        public static string Country
+        {
+            get => Preferences.Get(nameof(Country), string.Empty);
+            set => Preferences.Set(nameof(Country), value);
+        }
+        public static DateTime BirthDate
+        {
+            get => Preferences.Get(nameof(BirthDate), DateTime.Today.AddYears(-3).AddDays(-25));
+            set => Preferences.Set(nameof(BirthDate), value);
+        }
     }
 }

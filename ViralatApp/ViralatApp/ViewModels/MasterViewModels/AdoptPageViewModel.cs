@@ -18,6 +18,8 @@ namespace ViralatApp.ViewModels
         public DelegateCommand CancelCommand { get; set; }
         public DelegateCommand SubmitPageCommand { get; set; }
         public Pet Pet { get; set; }
+        public User CurrentUser { get; set; }
+        public User PetOwner { get; set; }
         public UserValidator User { get; set; }
         public Refuge Refuge { get; set; }
         public ObservableCollection<Questionnaire> Questions { get; set; }
@@ -67,15 +69,21 @@ namespace ViralatApp.ViewModels
        
         async Task Cancel()
         {
-          await  navigationService.GoBackAsync();
+          await navigationService.GoBackAsync();
         }
 
-        public void Initialize(INavigationParameters parameters)
+        public async void Initialize(INavigationParameters parameters)
         {
             if (parameters.ContainsKey(nameof(Pet)))
             {
                 Pet = parameters[nameof(Pet)] as Pet;
             }
+            CurrentUser = await ApiService.GetUserById(Settings.UserId);
+            /*CurrentUser = new User()
+            {
+
+            };*/
+            //PetOwner = await ApiService.GetUserById(Pet.User);
 
             LoadData();
         }
