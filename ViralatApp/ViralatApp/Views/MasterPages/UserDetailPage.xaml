@@ -37,7 +37,7 @@
                                 Margin="60,0,30,0"
                                 Aspect="AspectFit"
                                 HorizontalOptions="Center"
-                                Source="people"
+                                Source="{Binding User.Image}"
                                 VerticalOptions="Center" />
 
                         </StackLayout>
@@ -53,7 +53,7 @@
                         Margin="10,5"
                         Style="{StaticResource LabelRegular}"
                         Grid.ColumnSpan="2"
-                        Text="{extension:Translate  AboutMe}" />
+                        Text="{extension:Translate AboutMe}" />
                     <Label
                         Grid.Row="3"
                         Grid.ColumnSpan="2"
@@ -61,12 +61,15 @@
                         TextColor="{DynamicResource LetterLightColor}"
                         Margin="10,5"
                         Text="{Binding User.Description}" />
+                    <!-- /* ADOPTION HISTORY LIST DISABLED */
+                    
                     <Label
                         Grid.Row="4"
                         Margin="10,5"
                         Style="{StaticResource LabelRegular}"
                         Grid.ColumnSpan="2"
                         Text="{extension:Translate  AdoptionsHistories}" />
+                    
                     <StackLayout BindableLayout.ItemsSource="{Binding User.AdoptionHistory}"
                                  Grid.Row="5"
                                  Grid.ColumnSpan="2"
@@ -94,7 +97,7 @@
                                 </Grid>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
-                    </StackLayout>
+                    </StackLayout>-->
                     <ImageButton BackgroundColor="{DynamicResource SecondColor}"
                                  Grid.Row="6"
                                  Grid.Column="0"

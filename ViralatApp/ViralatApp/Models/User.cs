@@ -23,7 +23,7 @@ namespace ViralatApp.Models
 
         public string Password { get; set; }
 
-        [JsonIgnore]
+        [JsonProperty("phone")]
         public string Phone { get; set; }
 
         [JsonProperty("birthDate")]
@@ -41,9 +41,10 @@ namespace ViralatApp.Models
         [JsonProperty("id")]
         public string Id { get; set; }
 
-        [JsonIgnore]
+        [JsonProperty("description")]
         public string Description { get; set; }
-        [JsonIgnore]
+
+        [JsonProperty("image")]
         public string Image { get; set; }
         [JsonIgnore]
         public List<string> AdoptionHistory { get; set; }
