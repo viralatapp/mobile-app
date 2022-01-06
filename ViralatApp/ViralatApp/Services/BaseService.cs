@@ -57,7 +57,8 @@ namespace ViralatApp.Services
                 return result;
             });
 
-
+            var la_prueba = await responseMessage.Content.ReadAsStringAsync();
+            var la_otra_prueba = responseMessage.ReasonPhrase;
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonResult = await responseMessage.Content.ReadAsStringAsync().ConfigureAwait(false);

@@ -53,6 +53,42 @@ namespace ViralatApp.Models
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
+    public class PetForm : INotifyPropertyChanged
+    {
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("breed")]
+        public string Breed { get; set; }
+
+        [JsonProperty("user")]
+        public string User { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("age")]
+        public int Age { get; set; }
+
+        [JsonProperty("weight")]
+        public int Weight { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("sex")]
+        public string Sex { get; set; }
+
+        [JsonProperty("address")]
+        public string Address { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
     public class PetResponse
     {
         [JsonProperty("results")]

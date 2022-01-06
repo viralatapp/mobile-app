@@ -64,11 +64,10 @@ namespace ViralatApp.Models
         public bool IsValid { get=>Type.IsValid&&User.IsValid&&Name.IsValid&&Age.IsValid&&Weight.IsValid&&Description.IsValid&&Sex.IsValid&&Address.IsValid&&Breed.IsValid;  }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public  Pet CreatePet()
+        public PetForm CreatePet()
         {
-            return new Pet()
+            return new PetForm()
             {
-                Images = Images,
                 User = User.Value,
                 Age = Age.Value,
                 Weight = Weight.Value,
