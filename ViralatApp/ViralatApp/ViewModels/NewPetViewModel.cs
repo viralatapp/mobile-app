@@ -33,7 +33,7 @@ namespace ViralatApp.ViewModels
         public async Task CreatePet()
         {
             PetForm newPet = new PetForm();
-            /*
+
             newPet.User = Settings.UserId;
             newPet.Name = Name;
             newPet.Age = Age;
@@ -43,8 +43,8 @@ namespace ViralatApp.ViewModels
             newPet.Breed = Breed;
             newPet.Sex = Sex;
             newPet.Address = Address;
-            */
 
+            /* Dummy Data
             newPet.User = Settings.UserId;//"619c4486e22783001e88548a";
             newPet.Name = "Fido Dido";
             newPet.Age = 3;
@@ -53,7 +53,7 @@ namespace ViralatApp.ViewModels
             newPet.Type = "dog";
             newPet.Breed = "salchicha";
             newPet.Sex = "male";
-            newPet.Address = "Calle 17";
+            newPet.Address = "Calle 17";*/
             await ApiService.CreatePet(newPet);
         }
     }
