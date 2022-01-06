@@ -57,6 +57,9 @@ namespace ViralatApp.Services
                 return result;
             });
 
+            //To Debug a Request, set a breakpoint in the following instruction:
+            //Para depurar un request, coloca un breakpoint en la siguiente instrucción.
+            var DebugVariable = responseMessage.Content.ReadAsStringAsync();
 
             if (responseMessage.IsSuccessStatusCode)
             {
