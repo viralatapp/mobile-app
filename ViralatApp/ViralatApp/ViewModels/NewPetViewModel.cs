@@ -20,7 +20,8 @@ namespace ViralatApp.ViewModels
         public string Description { get; set; }
         public string Type { get; set; }
         public string Breed { get; set; }
-        public string Sex { get; set; }
+        public bool IsMale { get; set; }
+        public bool IsFemale { get; set; }
         public string Address { get; set; }
 
         public ICommand CreatePetCommand { get; }
@@ -41,7 +42,7 @@ namespace ViralatApp.ViewModels
             newPet.Description = Description;
             newPet.Type = Type;
             newPet.Breed = Breed;
-            newPet.Sex = Sex;
+            newPet.Sex = IsFemale ? "female" : "male";
             newPet.Address = Address;
 
             /* Dummy Data
@@ -55,6 +56,8 @@ namespace ViralatApp.ViewModels
             newPet.Sex = "male";
             newPet.Address = "Calle 17";*/
             await ApiService.CreatePet(newPet);
+            await dialogService.DisplayAlertAsync("Exito!", "La mascota se ha creado satisfactoriamente.", "OK");
+            await navigationService.GoBackAsync();
         }
     }
 }
