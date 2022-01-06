@@ -29,7 +29,7 @@ namespace ViralatApp.Services
         #endregion
         #region  Pet
         [Post("/pets")]
-        Task<HttpResponseMessage> CreatePet([Header("Authorization")] string token,[Body]Pet pet);
+        Task<HttpResponseMessage> CreatePet([Header("Authorization")] string token,[Body]PetForm pet);
         [Get("/pets")]
         Task<HttpResponseMessage> GetPets([Header("Authorization")] string token);
         [Get("/pets/{id}")]

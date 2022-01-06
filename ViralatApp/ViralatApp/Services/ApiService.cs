@@ -111,9 +111,9 @@ namespace ViralatApp.Services
             // };
         }
 
-        public async Task<Pet> CreatePet(Pet pet)
+        public async Task<PetForm> CreatePet(PetForm pet)
         {
-            var response = await RemoteRequestAsync<Pet>(ViralataService.Client.CreatePet(await Settings.Token, pet));
+            var response = await RemoteRequestAsync<PetForm>(ViralataService.Client.CreatePet(await Settings.Token, pet));
             if (!response.SuccessResult)
                 throw new Exception(response.ResponseMessage.ReasonPhrase);
             return response.Result;

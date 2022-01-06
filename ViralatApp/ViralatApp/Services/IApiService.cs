@@ -29,7 +29,7 @@ namespace ViralatApp.Services
         #region  Pet
 
         Task<List<Pet>> GetPets();
-        Task<Pet> CreatePet(Pet pet);
+        Task<PetForm> CreatePet(PetForm pet);
         Task<List<Category>> GetCategories();
 
         Task<Pet> GetPetById(string id);
